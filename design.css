@@ -159,8 +159,8 @@ input::-webkit-inner-spin-button {
   color:#FFFFFF;
 }
 
-/* Responsive layout - when the screen is less than 730px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 730px) {
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {   
     width: 100%;
     padding: 0;
@@ -184,12 +184,4 @@ input::-webkit-inner-spin-button {
     float: none;
     width: 100%;
   }
-}
-
-@media screen and (min-width: 750px) {
-  .scrollable {
-	height:100%;
-	width:100%;
-	overflow:auto;
-	}
 }
