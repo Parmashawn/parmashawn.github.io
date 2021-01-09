@@ -53,6 +53,7 @@ function generatelink() {
 		}
 		
 	}
+	link = link.slice(0, -1)
 	document.getElementById("linkbox").value = link;
 }
 
