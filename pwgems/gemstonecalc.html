@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Meta Data and icon-->
+		<meta charset="utf-8">
+		<meta name="author" content="Parmashawn">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		
+		<!-- Title and javascript and css imports-->
+		<title>Pixelworlds Gems</title>
+		<link rel="stylesheet" href="design.css">
+		<script src="gemstonelogic.js" defer></script>
+	</head>
+	<body onload="loader();">
+		<div class="header">
+			<h1><img style="width:80%;max-width:900px;" src="images/logo.png"></h1>
+			<p>The best place to calculate gems!</p>
+		</div>
+		<div class="topnav">
+			<a href="index.html">Fishes</a>
+			<a href="gemstonecalc.html">Gemstones</a>
+			<a href="guide.html">Price Guide</a>
+			<a href="about.html" style="float:right">About</a>
+		</div>
+		<div class="row">
+			<div class="leftcolumn">
+			<div class="card" style="background: radial-gradient(circle, rgba(240,147,48,1) 0%, rgba(186,116,73,1) 100%);">
+				<h2 style="text-align:center;">GEMSTONES</h2>
+				<div class="scrollable">
+					<table class="tablep">
+						<tr>
+							<th>Tiny</th>
+							<th>Small</th>
+							<th>Medium</th>
+							<th>Large</th>
+							<th>Huge</th>
+						</tr>
+						<tr>
+							<td><input class="geminput" oninput="calculate();" type="number" id="topt" min="0" max="999"><br><img src="images/top/t.png" alt="Tiny"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="tops" min="0" max="999"><br><img src="images/top/s.png" alt="Small"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="topm" min="0" max="999"><br><img src="images/top/m.png" alt="Medium"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="topl" min="0" max="999"><br><img src="images/top/l.png" alt="Large"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="toph" min="0" max="999"><br><img src="images/top/h.png" alt="Huge"></td>
+						</tr>
+						<tr>
+							<td><input class="geminput" oninput="calculate();" type="number" id="emet" min="0" max="999"><br><img src="images/eme/t.png" alt="Tiny"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="emes" min="0" max="999"><br><img src="images/eme/s.png" alt="Small"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="emem" min="0" max="999"><br><img src="images/eme/m.png" alt="Medium"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="emel" min="0" max="999"><br><img src="images/eme/l.png" alt="Large"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="emeh" min="0" max="999"><br><img src="images/eme/h.png" alt="Huge"></td>
+						</tr>
+						<tr>
+							<td><input class="geminput" oninput="calculate();" type="number" id="sapt" min="0" max="999"><br><img src="images/sap/t.png" alt="Tiny"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="saps" min="0" max="999"><br><img src="images/sap/s.png" alt="Small"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="sapm" min="0" max="999"><br><img src="images/sap/m.png" alt="Medium"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="sapl" min="0" max="999"><br><img src="images/sap/l.png" alt="Large"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="saph" min="0" max="999"><br><img src="images/sap/h.png" alt="Huge"></td>
+						</tr>
+						<tr>
+							<td><input class="geminput" oninput="calculate();" type="number" id="rubt" min="0" max="999"><br><img src="images/rub/t.png" alt="Tiny"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="rubs" min="0" max="999"><br><img src="images/rub/s.png" alt="Small"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="rubm" min="0" max="999"><br><img src="images/rub/m.png" alt="Medium"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="rubl" min="0" max="999"><br><img src="images/rub/l.png" alt="Large"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="rubh" min="0" max="999"><br><img src="images/rub/h.png" alt="Huge"></td>
+						</tr>
+						<tr>
+							<td><input class="geminput" oninput="calculate();" type="number" id="diat" min="0" max="999"><br><img src="images/dia/t.png" alt="Tiny"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="dias" min="0" max="999"><br><img src="images/dia/s.png" alt="Small"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="diam" min="0" max="999"><br><img src="images/dia/m.png" alt="Medium"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="dial" min="0" max="999"><br><img src="images/dia/l.png" alt="Large"></td>
+							<td><input class="geminput" oninput="calculate();" type="number" id="diah" min="0" max="999"><br><img src="images/dia/h.png" alt="Huge"></td>
+						</tr>
+					</table>
+				</div>
+				<p style="text-align:center;">Mining in Pixelworlds..</p>
+				<p style="text-align:center;">Mining is one of the main ways to earn gems in Pixelworlds. In Mining, a player will have a pickaxe and enter the pixelmines. Within the pixelmines a players can gather nuggets to craft keys while also mining ores to collect gemstones, which can then be cashed in for gems or traded to other players for worldlocks or byte coins. Using the keys a player crafts, it acts as a one-time pass to enter the higer tier mineshaft. This continues for 4 other mine levels, where the maximum level mineshaft is tier 5.</p>
+			</div>
+		</div>
+		<div class="rightcolumn">
+			<div class="card" style="background-color:#fffac9;">
+				<h2 style="text-align:center;">TOTAL</h2>
+				<div style="text-align:right;">
+					<img src="images/gem.png" style="height:13px;float:left;"/> <p id="gemtotal">0</p>
+					<hr>
+					<img src="images/wl.png" style="height:17px;float:left;" /> <p id="wltotal">0</p>
+					<img src="images/byte.png" style="height:17px;float:left;" /> <p id="bytetotal">0</p>
+					<p style="font-size:10px;text-align:center;">prices are calculated at the rate of 2500/wl</p>
+				</div>
+			</div>
+			<div class="card">
+				<img src="images/bot.png" id="pixelbot" style="width:100%;" onclick="copylink();">
+				<input type="text" id="linkbox" style="width:100%;" onclick="copylink();">
+			</div>
+			<div class="card">
+				<h3 style="text-align:center;">PWTIMES</h3>
+				<img style="width:100%;" src="images/pwtimes.jpg">
+				<p style="text-align:center;">Visit PWTIMES for the latest news in Pixelworlds!</p>
+			</div>
+			<div class="card">
+				<h3>Follow Me</h3>
+				<p><img src="images/yt.png" style="height:16px;float:left;" /> <a target="_blank" rel="noopener noreferrer"href="https://www.youtube.com/channel/UCZKJokVnc81qNQE2QimA3Ag"> Youtube</a> </p>
+			</div>
+		  </div>
+		</div>
+
+		<div class="footer">
+			<p style="">All in-game assets belong to Kukouri Mobile Entertainment and are used within their respective guidlines.</p>
+		</div>
+	</body>
+</html>
