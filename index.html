@@ -55,19 +55,19 @@
 		<link rel="stylesheet" href="style.css">
 		<script src="logic.js" defer></script>
 
-		<div class="w3-bar w3-border w3-blue">
+		<div class="w3-bar w3-border w3-blue" >
 		  <a href="index.html" class="w3-bar-item w3-button w3-hover-amber w3-amber">Calculator</a>
 		  <a href="guide.html" class="w3-bar-item w3-button w3-hover-amber ">Price Guide</a>
 		  <a href="about.html" class="w3-bar-item w3-button w3-hover-amber w3-right">About</a>
 		</div>
-		<div class="w3-container w3-center" style="background-image:url('img/stars.jpg');">
-		  <img src="img/logo.png" alt="Pixelworlds Gems" class="w3-image w3-padding-24">
+		<div class="w3-container w3-center" >
+		  <img src="img/logo.png" alt="Pixelworlds Gems" class="w3-image w3-padding-24" style="margin:5%;width:90%;max-width:537px;">
 		</div>
 	</head>
 
-	<body onload="loader();">
-		<div class="w3-row"> 
-		  <div class="w3-third w3-container w3-padding-24 w3-center"> <!-- Row 1 -->
+	<body onload="loader();" style="background-image:url('img/stars.jpg');background-attachment: fixed;">
+		<div class="selection group" style="margin:10px;"> 
+		  <div class="col span_1_of_3"> <!-- Row 1 -->
 				<table class="w3-table-all w3-card-4 ">
 					<tr class="w3-indigo">
 						<th>Tiny</th>
@@ -155,7 +155,7 @@
 					</tr>
 				</table>
 		  </div>
-		  <div class="w3-third w3-container w3-padding-24 w3-center"> <!-- Row 2 -->
+		  <div class="col span_1_of_3"> <!-- Row 2 -->
 			<table class="w3-table-all w3-card-4 ">
 				<tr class="w3-brown">
 					<th>Tiny</th>
@@ -201,8 +201,8 @@
 				</tr>
 			</table>
 		  </div>
-		  <div class="w3-rest w3-container w3-padding-24 w3-center "> <!-- Row 3 -->
-			<div class="w3-card w3-pale-yellow w3-padding-24">
+		  <div class="col span_1_of_3"> <!-- Row 3 -->
+			<div class="w3-card w3-pale-yellow w3-padding-24 w3-center">
 				  <h2>Total</h2>
 					<div class="w3-padding" style="text-align:right;">
 					<p></p>
@@ -214,7 +214,7 @@
 					</div>
 			</div>
 			<div class="w3-padding-24"/><!-- Spacer -->
-			<div class="w3-card w3-padding-24 w3-light-grey">
+			<div class="w3-card w3-padding-24 w3-light-grey w3-center">
 				<h2>Options</h2>
 				<div class="w3-padding"><!-- Wl Rate Picker-->
 					<label for="rate" style="float:left;">Rate per <img src="img/emoji/wl.png" /> </label>
@@ -274,12 +274,13 @@
 			</div>
 			</div>
 		  </div>
-		<div class="w3-card w3-padding w3-deep-orange">
-		<h2>Share</h2>
-		  <img src="img/emoji/share.png" id="sharebutton" style="height:33%;" onclick="copylink();"><br>
-		  <input type="text" id="sharebox" style="border:0;border-radius:5px;background:transparent;outline:none;width:50%" readonly>
-		  <p>Share the bill with others! The fish you choose are saved with this link.
-		  Simply click the logo above to copy the link to your clipboard</p>
+		  <div class="w3-padding-24"/><!-- Spacer -->
+		<div class="w3-card w3-padding w3-deep-orange w3-center">
+			<h2>Share</h2>
+			  <img src="img/emoji/share.png" id="sharebutton" style="height:33%;" onclick="copylink();"><br>
+			  <input type="text" id="sharebox" style="border:0;border-radius:5px;background:transparent;outline:none;width:50%" readonly>
+			  <p>Share the bill with others! The fish you choose are saved with this link.
+			  Simply click the logo above to copy the link to your clipboard</p>
 		</div>
 	</body>
 </html>
