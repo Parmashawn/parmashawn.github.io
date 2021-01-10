@@ -1,5 +1,10 @@
 {
+ 
+ "background_color": "white",
+ "display": "fullscreen",
+ "description": "Lets you calculate gems from fish and gemstones in Pixelworlds.",
  "name": "Pixelworlds Gems",
+ "short_name": "PW Gems",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
