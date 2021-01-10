@@ -232,16 +232,33 @@
 					<label for="clanlevel" style="float:left;">Clan Level Bonus</label>
 					<select id="clanlevel" name="clanlevel" style="float:right;" onchange="calculate();">
 						<option value="0" selected>No Clan</option>
-						<option value="0.1">Level 1</option>
-						<option value="0.1">Level 2</option>
-						<option value="0.1">Level 3</option>
-						<option value="0.1">Level 4</option>
-						<option value="0.3">Level 5</option>
-						<option value="0.3">Level 6</option>
-						<option value="0.3">Level 7</option>
-						<option value="0.3">Level 8</option>
-						<option value="0.5">Level 9</option>
-						<option value="0.5">Level 10</option>
+						<option value="0.01">Level 1</option>
+						<option value="0.01">Level 2</option>
+						<option value="0.01">Level 3</option>
+						<option value="0.01">Level 4</option>
+						<option value="0.03">Level 5</option>
+						<option value="0.03">Level 6</option>
+						<option value="0.03">Level 7</option>
+						<option value="0.03">Level 8</option>
+						<option value="0.05">Level 9</option>
+						<option value="0.05">Level 10</option>
+					</select>
+				</div>
+				<div class="w3-padding-24"/><!-- Spacer -->
+				<div class="w3-padding"><!-- bytecoin rate Picker-->
+					<label for="byterate" style="float:left;">Byte coins per <img src="img/emoji/wl.png" /></label>
+					<select id="byterate" name="bytecoinrate" style="float:right;" onchange="calculate();">
+						<option value="350">350/WL</option>
+						<option value="340">340/WL</option>
+						<option value="330">330/WL</option>
+						<option value="320">320/WL</option>
+						<option value="310">310/WL</option>
+						<option value="300" selected>300/WL</option>
+						<option value="290">290/WL</option>
+						<option value="280">280/WL</option>
+						<option value="270">270/WL</option>
+						<option value="260">260/WL</option>
+						<option value="250">250/WL</option>
 					</select>
 				</div>
 			</div>
@@ -250,7 +267,7 @@
 		<div class="w3-card w3-padding w3-deep-orange">
 		<h2>Share</h2>
 		  <img src="img/emoji/share.png" id="sharebutton" style="height:33%;" onclick="copylink();"><br>
-		  <input type="text" id="sharebox" style="border:0;border-radius:5px;background:transparent;outline:none;width:50%">
+		  <input type="text" id="sharebox" style="border:0;border-radius:5px;background:transparent;outline:none;width:50%" readonly>
 		  <p>Share the bill with others! The fish you choose are saved with this link.
 		  Simply click the logo above to copy the link to your clipboard</p>
 		</div>

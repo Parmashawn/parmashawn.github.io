@@ -2,6 +2,7 @@ function calculate() {
 
 	var wlrate = document.getElementById("rate").value;
 	var clanmodifier = document.getElementById("clanlevel").value;
+	var bytemodifier = document.getElementById("byterate").value;
 
 // Calculate gems from fish
 	var fishgems = 0;
@@ -100,7 +101,7 @@ function calculate() {
 	document.getElementById("gemtotal").innerHTML = totalgems;
 
 	// Calculate Extra Clan Gems
-	var extragems = Math.round(totalgems * clanmodifier);
+	var extragems = Math.round(fishgems * clanmodifier);
 	if (extragems == 0) {
 		document.getElementById("clanbonusgems").innerHTML = ""
 	} else {document.getElementById("clanbonusgems").innerHTML = "+" + extragems}
@@ -110,8 +111,8 @@ function calculate() {
 	document.getElementById("wltotal").innerHTML = Math.round(totalgems / wlrate);
 	
 	//Calculate Bytecoins based on Worldlocks
-	var bytemodifier = wlrate / 300
-	document.getElementById("bytetotal").innerHTML = Math.round(totalgems / bytemodifier);
+	var byterate = wlrate / bytemodifier
+	document.getElementById("bytetotal").innerHTML = Math.round(totalgems / byterate);
 
 	//Generates new link
 	generatelink();
