@@ -1,6 +1,5 @@
 * {
 transition:0.3s;
-
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -18,9 +17,14 @@ input[type=number] {
 th,td {
 text-align:center;
 font-size:max(50%, 90%);
-
 }
 
+footer{
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .fishinput, .geminput {
 border:0px;
@@ -29,6 +33,8 @@ background:#c2fcf2;
 outline:none;
 text-align:center;
 }
+
+
 
 /*  SECTIONS  */
 .section {
