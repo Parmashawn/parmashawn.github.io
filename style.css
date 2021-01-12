@@ -89,6 +89,10 @@ text-align:center;
   border-bottom: 1px solid #ddd;
 }
 
+#pricetable th {
+	background-color:#ffedad;
+}
+
 #pricetable tr.header, #pricetable tr:hover {
   /* Add a grey background color to the table header and on hover */
   background-color: #f1f1f1;
