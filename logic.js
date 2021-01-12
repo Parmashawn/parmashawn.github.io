@@ -1,11 +1,11 @@
 function calculate() {
 
-	let wlrate = document.getElementById("rate").value;
-	let clanmodifier = document.getElementById("clanlevel").value;
-	let bytemodifier = document.getElementById("byterate").value;
+	var wlrate = document.getElementById("rate").value;
+	var clanmodifier = document.getElementById("clanlevel").value;
+	var bytemodifier = document.getElementById("byterate").value;
 
 // Calculate gems from fish
-	let fishgems = 0;
+	var fishgems = 0;
 
 	fishgems += document.getElementById("hert").value * 10;
 	fishgems += document.getElementById("hers").value * 40;
@@ -63,7 +63,7 @@ function calculate() {
 	fishgems += document.getElementById("duml").value * 50;
 	fishgems += document.getElementById("dumh").value * 100;
 
-	let mininggems = 0;
+	var mininggems = 0;
 
 	mininggems += document.getElementById("topt").value * 3;
 	mininggems += document.getElementById("tops").value * 6;
@@ -91,11 +91,13 @@ function calculate() {
 	mininggems += document.getElementById("dial").value * 300;
 	mininggems += document.getElementById("diah").value * 900;
 
-	let totalgems = fishgems + mininggems;
+	var totalgems = fishgems + mininggems;
 
-	if (fishgems + mininggems > 999999999999) totalgems = 999999999999;
+	if (fishgems + mininggems > 999999999999) {
+		var totalgems = 999999999999
+	}
 
-	// Update Total Gems
+	// Calculate Total Gems
 	document.getElementById("gemtotal").innerHTML = totalgems;
 
 	// Calculate Extra Clan Gems
@@ -109,7 +111,7 @@ function calculate() {
 	document.getElementById("wltotal").innerHTML = Math.round(totalgems / wlrate);
 	
 	//Calculate Bytecoins based on Worldlocks
-	let byterate = wlrate / bytemodifier
+	var byterate = wlrate / bytemodifier
 	document.getElementById("bytetotal").innerHTML = Math.round(totalgems / byterate);
 
 	//Generates new link
@@ -117,30 +119,31 @@ function calculate() {
 }
 
 function generatelink() {
-	let link = window.location.href.split('#')[0] + "#";
-	let inputs = document.getElementsByClassName("fishinput");
-	for (let i=0; i < inputs.length; i++) {
+	var link = window.location.href.split('#')[0] + "#";
+	var inputs = document.getElementsByClassName("fishinput");
+	var i
+	for (i=0; i < inputs.length; i++) {
 		if (inputs[i].value > 0) {
-			const str = inputs[i].id + "=" + inputs[i].value + "&";
+			var str = inputs[i].id + "=" + inputs[i].value + "&";
 			link += str;
-		};
-	};
-	inputs = document.getElementsByClassName("geminput");
-	for (let i=0; i < inputs.length; i++) {
+		}}
+	var inputs = document.getElementsByClassName("geminput");
+	var i
+	for (i=0; i < inputs.length; i++) {
 		if (inputs[i].value > 0) {
-			const str = inputs[i].id + "=" + inputs[i].value + "&";
+			var str = inputs[i].id + "=" + inputs[i].value + "&";
 			link += str;
 		}}
 
 	document.getElementById("sharebox").value = link.slice(0, -1);
-};
+}
 
 function copylink() {
 
   document.getElementById("sharebutton").src = "img/emoji/share-hover.png"
 
   /* Get the text field */
-  let copyText = document.getElementById("sharebox");
+  var copyText = document.getElementById("sharebox");
 
   /* Select the text field */
   copyText.select();

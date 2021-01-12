@@ -1,5 +1,6 @@
 * {
 transition:0.3s;
+
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -17,6 +18,7 @@ input[type=number] {
 th,td {
 text-align:center;
 font-size:max(50%, 90%);
+
 }
 
 
@@ -27,8 +29,6 @@ background:#c2fcf2;
 outline:none;
 text-align:center;
 }
-
-
 
 /*  SECTIONS  */
 .section {
@@ -87,10 +87,6 @@ text-align:center;
 #pricetable tr {
   /* Add a bottom border to all table rows */
   border-bottom: 1px solid #ddd;
-}
-
-#pricetable th {
-	background-color:#ffedad;
 }
 
 #pricetable tr.header, #pricetable tr:hover {
