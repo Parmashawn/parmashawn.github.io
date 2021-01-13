@@ -97,28 +97,34 @@ function calculate() {
 		var totalgems = 999999999999
 	}
 
+
 	// Calculate Total Gems
-	document.getElementById("gemtotal").innerHTML = totalgems;
+	document.getElementById("gemtotal").innerHTML = totalgems.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 	// Calculate Extra Clan Gems
 	var extragems = Math.round(fishgems * clanmodifier);
+	if (extragems > 9999999999) {
+		extragems = 9999999999;
+	}
 	if (extragems == 0) {
-		document.getElementById("clanbonusgems").innerHTML = ""
-	} else {document.getElementById("clanbonusgems").innerHTML = "+" + extragems}
+		document.getElementById("clanbonusgems").innerHTML = "";
+	} else {document.getElementById("clanbonusgems").innerHTML = "+" + extragems.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");}
 	
 	
 	// Calculate Worldlocks
-	document.getElementById("wltotal").innerHTML = Math.round(totalgems / wlrate);
+	document.getElementById("wltotal").innerHTML = Math.round(totalgems / wlrate).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	
 	//Calculate Bytecoins based on Worldlocks
 	var byterate = wlrate / bytemodifier
-	document.getElementById("bytetotal").innerHTML = Math.round(totalgems / byterate);
+	document.getElementById("bytetotal").innerHTML = Math.round(totalgems / byterate).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 	//Generates new link
 	generatelink();
 }
 
 function generatelink() {
+	var rate = document.getElementById("rate")
+	var byterate = document.getElementById("byterate")
 	var link = window.location.href.split('#')[0] + "#";
 	var inputs = document.getElementsByClassName("fishinput");
 	var i
@@ -134,6 +140,9 @@ function generatelink() {
 			var str = inputs[i].id + "=" + inputs[i].value + "&";
 			link += str;
 		}}
+	if (rate.value != 2500) {link += rate.id + "=" + rate.value + "&";}
+	if (byterate.value != 300) {link += byterate.id + "=" + byterate.value + "&";}
+	
 
 	document.getElementById("sharebox").value = link.slice(0, -1);
 }
@@ -188,4 +197,23 @@ function pricesearch() {
       }
     }
   }
+}
+
+function reset() {
+var inputs = document.getElementsByClassName("fishinput");
+	var i;
+	for (i=0; i < inputs.length; i++) {
+		if (inputs[i].value > 0) {
+			inputs[i].value = "";
+		}}
+	var inputs = document.getElementsByClassName("geminput");
+	var i
+	for (i=0; i < inputs.length; i++) {
+		if (inputs[i].value > 0) {
+			inputs[i].value = "";
+		}}
+	document.getElementById("byterate").value = 300
+	document.getElementById("clanlevel").value = 0
+	document.getElementById("rate").value = 2500
+	calculate();
 }
