@@ -4,7 +4,7 @@
 	  <title>Pixelworlds Gems - Calculator</title>
 	  <meta charset="utf-8">
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <script src="acripts/calculate.js"></script>
+	  <script src="scripts/calculate.js"></script>
 	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -30,7 +30,7 @@
 				<a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator</a>
+				<a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator </a>
 			  </li>
 			  <li class="nav-item">
 				<a class="nav-link" href="#">...</a>
@@ -60,24 +60,38 @@
 					  <div class="tab-pane container active" id="calc">
 						<div class="input-group mb-3 mt-4"> <!-- the dropdown lists for fish, amount, and size. -->
 							<div class="input-group-append">
-							  <input type="number" class="form-control" placeholder="#" style="width:65px;">
-							  <select class="form-control" id="fish_type" name="sellist1">
-								<option value="herring">Herring</option>
-								<option value="kingfish">Kingfish</option>
-								<option value="goldfish">Goldfish</option>
-								<option value="butterflyfish">Butterflyfish</option>
+							  <input type="number" class="form-control" placeholder="#" id="fish_amount" style="width:65px;">
+							  <select class="form-control" id="fish_type" name="fish type">
+								<option disabled>-Fishes-</option>
+								<option value="Herring">Herring</option>
+								<option value="Kingfish">Kingfish</option>
+								<option value="Goldfish">Goldfish</option>
+								<option value="Butterflyfish">Butterflyfish</option>
+								<option value="Carp">Carp</option>
+								<option value="Halibut">Halibut</option>
+								<option value="Sea Angler">Sea Angler</option>
+								<option value="Tuna">Tuna</option>
+								<option value="Acid Puffer">Acid Puffer</option>
+								<option value="Dumbfish">Dumbfish</option>
+								<option value="Piranha">Piranha</option>
+								<option disabled>-Gemstones-</option>
+								<option value="Topaz">Topaz</option>
+								<option value="Emerald">Emerald</option>
+								<option value="Sapphire">Sapphire</option>
+								<option value="Ruby">Ruby</option>
+								<option value="Diamond">Diamond</option>
 							  </select>
-							  <select class="form-control" id="fish_size" name="sellist1">
-								<option value="tiny">Tiny</option>
-								<option value="small">Small</option>
-								<option value="medium">Medium</option>
-								<option value="large">Large</option>
-								<option value="huge">Huge</option>
+							  <select class="form-control" id="fish_size" name="fish size">
+								<option value="Tiny">Tiny</option>
+								<option value="Small">Small</option>
+								<option value="Medium">Medium</option>
+								<option value="Large">Large</option>
+								<option value="Huge">Huge</option>
 							  </select>
-							  <button class="btn btn-primary" type="button"><i class="fas fa-plus"></i></button>  
+							  <button class="btn btn-primary" type="button" onclick="addRow()"><i class="fas fa-plus"></i></button>  
 							 </div>
 						  </div>
-						  <table class="table">
+						  <table class="table" id="fish_table">
 							<thead class="thead-dark">
 							  <tr>
 								<th></th>
@@ -87,14 +101,28 @@
 							  </tr>
 							</thead>
 							<tbody>
-							  <tr>
-								<td><i class="fas fa-fish"></i></td>
-								<td>23</td>
-								<td>Herring</td>
-								<td>Small</td>
-							  </tr>
 							</tbody>
 						  </table>
+						  <ul class="list-group">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+								  <span class="input-group-text"><img src="img/emoji/gem.png"></span>
+								</div>
+								<input type="text" id="total_gems" class="form-control" placeholder="...">
+							  </div>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+								  <span class="input-group-text"><img src="img/emoji/wl.png"></span>
+								</div>
+								<input type="text" id="total_wl" class="form-control" placeholder="...">
+							  </div>
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+								  <span class="input-group-text"><img src="img/emoji/byte.png"></span>
+								</div>
+								<input type="text" id="total_bc" class="form-control" placeholder="...">
+							  </div>
+							</ul>
 						</div>
 					  <div class="tab-pane container fade" id="guide"> <!-- Gem price Guide -->
 						<div class="table-responsive mt-4" style="font-size:70%;">          
@@ -261,7 +289,7 @@
 					</div>
 				</div>
 				<div class="col-sm-4"> <!-- Column two starts here -->
-				  <h3>Blah blah</h3>
+				  <h3><i class="fas fa-ad"></i> Blah blah</h3>
 				  <p>should I put an ad here? I probably won't but maybe i will someday in the future.... i hate ads... I'll probably only advertise my own world lol</p>
 				</div>
 			</div>
