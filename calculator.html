@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Pixelworlds Gems - Calculator</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <script src="acripts/calculate.js"></script>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+		<!-- Styling of the page -->
+		<style>
+		</style>
+	</head>
+	
+	
+	
+	<body>
+		<!-- This is the Navigation Bar fixed at the top always.-->
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		  <a class="navbar-brand" href="index.html"><img src="img/icon.png" alt="Logo" style="width:40px;"></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+			  <li class="nav-item">
+				<a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">...</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">...</a>
+			  </li>    
+			</ul>
+		  </div>  
+		</nav>
+		<!-- Navigation bar ends here -->
+		<!-- Website content starts here. -->
+		<div class="container mt-4">
+			<div class="row">
+				<div class="col-sm-8"> <!-- Column one starts here -->
+					<ul class="nav nav-tabs">
+					  <li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#calc"><i class="fas fa-calculator"></i></a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#guide"><i class="fas fa-table"></i></a>
+					  </li>
+					</ul>
+
+					<!-- Tab panes -->
+					<div class="tab-content">
+					  <div class="tab-pane container active" id="calc">
+						<div class="input-group mb-3 mt-4"> <!-- the dropdown lists for fish, amount, and size. -->
+							<div class="input-group-append">
+							  <input type="number" class="form-control" placeholder="#" style="width:65px;">
+							  <select class="form-control" id="fish_type" name="sellist1">
+								<option value="herring">Herring</option>
+								<option value="kingfish">Kingfish</option>
+								<option value="goldfish">Goldfish</option>
+								<option value="butterflyfish">Butterflyfish</option>
+							  </select>
+							  <select class="form-control" id="fish_size" name="sellist1">
+								<option value="tiny">Tiny</option>
+								<option value="small">Small</option>
+								<option value="medium">Medium</option>
+								<option value="large">Large</option>
+								<option value="huge">Huge</option>
+							  </select>
+							  <button class="btn btn-primary" type="button"><i class="fas fa-plus"></i></button>  
+							 </div>
+						  </div>
+						  <table class="table">
+							<thead class="thead-dark">
+							  <tr>
+								<th></th>
+								<th>#</th>
+								<th>Type</th>
+								<th>Size</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td><i class="fas fa-fish"></i></td>
+								<td>23</td>
+								<td>Herring</td>
+								<td>Small</td>
+							  </tr>
+							</tbody>
+						  </table>
+						</div>
+					  <div class="tab-pane container fade" id="guide"> <!-- Gem price Guide -->
+						<div class="table-responsive mt-4" style="font-size:70%;">          
+							  <table class="table">
+								<thead>
+								  <tr>
+									<th>Fish</th>
+									<th>Tiny</th>
+									<th>Small</th>
+									<th>Medium</th>
+									<th>Large</th>
+									<th>Huge</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+								    <td>Herring</td>
+									<td><img src="img/emoji/gem.png"> 10</td>
+									<td><img src="img/emoji/gem.png"> 40</td>
+									<td><img src="img/emoji/gem.png"> 70</td>
+									<td><img src="img/emoji/gem.png"> 100</td>
+									<td><img src="img/emoji/gem.png"> 300</td>
+								  </tr>
+								  <tr>
+								    <td>Kingfish</td>
+									<td><img src="img/emoji/gem.png"> 10</td>
+									<td><img src="img/emoji/gem.png"> 40</td>
+									<td><img src="img/emoji/gem.png"> 70</td>
+									<td><img src="img/emoji/gem.png"> 100</td>
+									<td><img src="img/emoji/gem.png"> 300</td>
+								  </tr>
+								  <tr>
+								    <td>Goldfish</td>
+									<td><img src="img/emoji/gem.png"> 15</td>
+									<td><img src="img/emoji/gem.png"> 60</td>
+									<td><img src="img/emoji/gem.png"> 105</td>
+									<td><img src="img/emoji/gem.png"> 150</td>
+									<td><img src="img/emoji/gem.png"> 600</td>
+								  </tr>
+								  <tr>
+								    <td>Butterflyfish</td>
+									<td><img src="img/emoji/gem.png"> 15</td>
+									<td><img src="img/emoji/gem.png"> 60</td>
+									<td><img src="img/emoji/gem.png"> 105</td>
+									<td><img src="img/emoji/gem.png"> 150</td>
+									<td><img src="img/emoji/gem.png"> 600</td>
+								  </tr>
+								  <tr>
+								    <td>Carp</td>
+									<td><img src="img/emoji/gem.png"> 20</td>
+									<td><img src="img/emoji/gem.png"> 80</td>
+									<td><img src="img/emoji/gem.png"> 140</td>
+									<td><img src="img/emoji/gem.png"> 200</td>
+									<td><img src="img/emoji/gem.png"> 600</td>
+								  </tr>
+								  <tr>
+								    <td>Halibut</td>
+									<td><img src="img/emoji/gem.png"> 20</td>
+									<td><img src="img/emoji/gem.png"> 80</td>
+									<td><img src="img/emoji/gem.png"> 140</td>
+									<td><img src="img/emoji/gem.png"> 200</td>
+									<td><img src="img/emoji/gem.png"> 600</td>
+								  </tr>
+								  <tr>
+								    <td>Sea Angler</td>
+									<td><img src="img/emoji/gem.png"> 30</td>
+									<td><img src="img/emoji/gem.png"> 120</td>
+									<td><img src="img/emoji/gem.png"> 210</td>
+									<td><img src="img/emoji/gem.png"> 300</td>
+									<td><img src="img/emoji/gem.png"> 900</td>
+								  </tr>
+								  <tr>
+								    <td>Tuna</td>
+									<td><img src="img/emoji/gem.png"> 40</td>
+									<td><img src="img/emoji/gem.png"> 160</td>
+									<td><img src="img/emoji/gem.png"> 280</td>
+									<td><img src="img/emoji/gem.png"> 400</td>
+									<td><img src="img/emoji/gem.png"> 1200</td>
+								  </tr>
+								  <tr>
+								    <td>Acid Puffer</td>
+									<td><img src="img/emoji/gem.png"> 80</td>
+									<td><img src="img/emoji/gem.png"> 320</td>
+									<td><img src="img/emoji/gem.png"> 560</td>
+									<td><img src="img/emoji/gem.png"> 800</td>
+									<td><img src="img/emoji/gem.png"> 2400</td>
+								  </tr>
+								  <tr>
+								    <td>Dumbfish</td>
+									<td><img src="img/emoji/gem.png"> 5</td>
+									<td><img src="img/emoji/gem.png"> 10</td>
+									<td><img src="img/emoji/gem.png"> 30</td>
+									<td><img src="img/emoji/gem.png"> 50</td>
+									<td><img src="img/emoji/gem.png"> 100</td>
+								  </tr>
+								  <tr>
+								    <td>Piranha</td>
+									<td><img src="img/emoji/gem.png"> 30</td>
+									<td><img src="img/emoji/gem.png"> 120</td>
+									<td><img src="img/emoji/gem.png"> 210</td>
+									<td><img src="img/emoji/gem.png"> 300</td>
+									<td><img src="img/emoji/gem.png"> 900</td>
+								  </tr>
+								</tbody>
+							  </table>
+							  </div>
+							  <div class="table-responsive">          
+							  <table class="table" style="font-size:70%;">
+								<thead>
+								  <tr>
+									<th>Gemstone</th>
+									<th>Tiny</th>
+									<th>Small</th>
+									<th>Medium</th>
+									<th>Large</th>
+									<th>Huge</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  <tr>
+								    <td>Topaz</td>
+									<td><img src="img/emoji/gem.png"> 3</td>
+									<td><img src="img/emoji/gem.png"> 6</td>
+									<td><img src="img/emoji/gem.png"> 12</td>
+									<td><img src="img/emoji/gem.png"> 30</td>
+									<td><img src="img/emoji/gem.png"> 90</td>
+								  </tr>
+								  <tr>
+								    <td>Emerald</td>
+									<td><img src="img/emoji/gem.png"> 5</td>
+									<td><img src="img/emoji/gem.png"> 10</td>
+									<td><img src="img/emoji/gem.png"> 20</td>
+									<td><img src="img/emoji/gem.png"> 50</td>
+									<td><img src="img/emoji/gem.png"> 150</td>
+								  </tr>
+								  <tr>
+								    <td>Saphire</td>
+									<td><img src="img/emoji/gem.png"> 10</td>
+									<td><img src="img/emoji/gem.png"> 20</td>
+									<td><img src="img/emoji/gem.png"> 40</td>
+									<td><img src="img/emoji/gem.png"> 100</td>
+									<td><img src="img/emoji/gem.png"> 300</td>
+								  </tr>
+								  <tr>
+								    <td>Ruby</td>
+									<td><img src="img/emoji/gem.png"> 20</td>
+									<td><img src="img/emoji/gem.png"> 40</td>
+									<td><img src="img/emoji/gem.png"> 80</td>
+									<td><img src="img/emoji/gem.png"> 200</td>
+									<td><img src="img/emoji/gem.png"> 600</td>
+								  </tr>
+								  <tr>
+								    <td>Diamond</td>
+									<td><img src="img/emoji/gem.png"> 30</td>
+									<td><img src="img/emoji/gem.png"> 60</td>
+									<td><img src="img/emoji/gem.png"> 120</td>
+									<td><img src="img/emoji/gem.png"> 300</td>
+									<td><img src="img/emoji/gem.png"> 900</td>
+								  </tr>
+								</tbody>
+							  </table>
+							</div>
+					  </div>
+					</div>
+				</div>
+				<div class="col-sm-4"> <!-- Column two starts here -->
+				  <h3>Blah blah</h3>
+				  <p>should I put an ad here? I probably won't but maybe i will someday in the future.... i hate ads... I'll probably only advertise my own world lol</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
