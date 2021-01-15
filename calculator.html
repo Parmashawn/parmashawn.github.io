@@ -1,489 +1,427 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Pixelworlds Gems - Calculator</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="scripts/calculate.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-        <!-- Styling of the page -->
-        <style>
-        </style>
-        <script> <!-- For Tooltips -->
-            $(document).ready(function(){
-              $('[data-toggle="tooltip"]').tooltip();
-            });
-        </script>
-    </head>
-    <body>
-        <!-- This is the Navigation Bar fixed at the top always.-->
-        <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand" href="index.html"><img src="img/icon.png" alt="Logo" style="width:40px;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="Experimental" id="navbardrop" data-toggle="dropdown">
-                        <i class="fas fa-flask"></i> Experimental
-                      </a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="newcalculator.html">List Calculator <span class="badge badge-secondary">New</span></a>
-                        <a class="dropdown-item disabled" href="#">Item Creator <span class="badge badge-warning">WIP</span></a>
-                      </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">...</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- Navigation bar ends here -->
-        <!-- Website content starts here. -->
-        <div class="container mt-4">
-            <div class="row">
-                <div class="col-sm-8">
-                    <!-- Column one starts here -->
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" data-toggle="tab" href="#calc"><i class="fas fa-calculator"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="tab" href="#guide"><i class="fas fa-table"></i></a>
-                        </li>
-                    </ul>
-                    <!-- Tab panes -->
-                    <div class="tab-content">
-                        <div class="tab-pane container active" id="calc">
-                        <form>
-                          <div class="input-group mb-2 mt-4">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/herring.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Huge" placeholder="Huge">
-                          </div>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/kingfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/butterflyfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/butterflyfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/carp.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/halibut.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/sea.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/tuna.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/acid.png" style="height:24px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/dumbfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-4">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/piranha.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/topaz.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/emerald.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/sapphire.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/ruby.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/diamond.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                            <ul class="list-group">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><img src="img/emoji/gem.png"></span>
-                                    </div>
-                                    <input type="text" id="total_gems" class="form-control" oninput="calculate();" placeholder="..." disabled>
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><img src="img/emoji/wl.png"></span>
-                                    </div>
-                                    <input type="text" id="total_wl" class="form-control" oninput="calculate();" placeholder="..." disabled>
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><img src="img/emoji/byte.png"></span>
-                                    </div>
-                                    <input type="text" id="total_bc" class="form-control" oninput="calculate();" placeholder="..." disabled>
-                                </div>
-                            </ul>
-                            <div class="card mx-0 mb-4">
-                                <div class="card-header">
-                                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
-                                    <i class="fas fa-cog"></i> Advanced
-                                    </a>
-                                </div>
-                                <div id="collapseOne" class="collapse">
-                                    <div class="card-body">
-                                        <form>
-                                            <label for="option_rate" id="label_option_rate">Gems per World Lock: 2500</label>
-                                            <input type="range" class="custom-range" id="option_rate" min="1500" value="2500" max="3500" step="100" oninput="calculate();">
-                                            <label for="option_clan" >Clan Level Bonus</label>
-                                            <select id="option_clan" class="custom-select" oninput="calculate();">
-                                                <option value="1.00" selected>Choose a Clan Level</option>
-                                                <option value="1.00">No Clan</option>
-                                                <option value="1.00">Level 1</option>
-                                                <option value="1.01">Level 2</option>
-                                                <option value="1.01">Level 3</option>
-                                                <option value="1.01">Level 4</option>
-                                                <option value="1.03">Level 5</option>
-                                                <option value="1.03">Level 6</option>
-                                                <option value="1.03">Level 7</option>
-                                                <option value="1.03">Level 8</option>
-                                                <option value="1.05">Level 9</option>
-                                                <option value="1.05">Level 10</option>
-                                            </select>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane container fade" id="guide">
-                            <!-- Gem price Guide -->
-                            <div class="table-responsive mt-4" style="font-size:70%;">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Fish</th>
-                                            <th>Tiny</th>
-                                            <th>Small</th>
-                                            <th>Medium</th>
-                                            <th>Large</th>
-                                            <th>Huge</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Herring</td>
-                                            <td><img src="img/emoji/gem.png"> 10</td>
-                                            <td><img src="img/emoji/gem.png"> 40</td>
-                                            <td><img src="img/emoji/gem.png"> 70</td>
-                                            <td><img src="img/emoji/gem.png"> 100</td>
-                                            <td><img src="img/emoji/gem.png"> 300</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Kingfish</td>
-                                            <td><img src="img/emoji/gem.png"> 10</td>
-                                            <td><img src="img/emoji/gem.png"> 40</td>
-                                            <td><img src="img/emoji/gem.png"> 70</td>
-                                            <td><img src="img/emoji/gem.png"> 100</td>
-                                            <td><img src="img/emoji/gem.png"> 300</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Goldfish</td>
-                                            <td><img src="img/emoji/gem.png"> 15</td>
-                                            <td><img src="img/emoji/gem.png"> 60</td>
-                                            <td><img src="img/emoji/gem.png"> 105</td>
-                                            <td><img src="img/emoji/gem.png"> 150</td>
-                                            <td><img src="img/emoji/gem.png"> 600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Butterflyfish</td>
-                                            <td><img src="img/emoji/gem.png"> 15</td>
-                                            <td><img src="img/emoji/gem.png"> 60</td>
-                                            <td><img src="img/emoji/gem.png"> 105</td>
-                                            <td><img src="img/emoji/gem.png"> 150</td>
-                                            <td><img src="img/emoji/gem.png"> 600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Carp</td>
-                                            <td><img src="img/emoji/gem.png"> 20</td>
-                                            <td><img src="img/emoji/gem.png"> 80</td>
-                                            <td><img src="img/emoji/gem.png"> 140</td>
-                                            <td><img src="img/emoji/gem.png"> 200</td>
-                                            <td><img src="img/emoji/gem.png"> 600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Halibut</td>
-                                            <td><img src="img/emoji/gem.png"> 20</td>
-                                            <td><img src="img/emoji/gem.png"> 80</td>
-                                            <td><img src="img/emoji/gem.png"> 140</td>
-                                            <td><img src="img/emoji/gem.png"> 200</td>
-                                            <td><img src="img/emoji/gem.png"> 600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Sea Angler</td>
-                                            <td><img src="img/emoji/gem.png"> 30</td>
-                                            <td><img src="img/emoji/gem.png"> 120</td>
-                                            <td><img src="img/emoji/gem.png"> 210</td>
-                                            <td><img src="img/emoji/gem.png"> 300</td>
-                                            <td><img src="img/emoji/gem.png"> 900</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tuna</td>
-                                            <td><img src="img/emoji/gem.png"> 40</td>
-                                            <td><img src="img/emoji/gem.png"> 160</td>
-                                            <td><img src="img/emoji/gem.png"> 280</td>
-                                            <td><img src="img/emoji/gem.png"> 400</td>
-                                            <td><img src="img/emoji/gem.png"> 1200</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Acid Puffer</td>
-                                            <td><img src="img/emoji/gem.png"> 80</td>
-                                            <td><img src="img/emoji/gem.png"> 320</td>
-                                            <td><img src="img/emoji/gem.png"> 560</td>
-                                            <td><img src="img/emoji/gem.png"> 800</td>
-                                            <td><img src="img/emoji/gem.png"> 2400</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Dumbfish</td>
-                                            <td><img src="img/emoji/gem.png"> 5</td>
-                                            <td><img src="img/emoji/gem.png"> 10</td>
-                                            <td><img src="img/emoji/gem.png"> 30</td>
-                                            <td><img src="img/emoji/gem.png"> 50</td>
-                                            <td><img src="img/emoji/gem.png"> 100</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Piranha</td>
-                                            <td><img src="img/emoji/gem.png"> 30</td>
-                                            <td><img src="img/emoji/gem.png"> 120</td>
-                                            <td><img src="img/emoji/gem.png"> 210</td>
-                                            <td><img src="img/emoji/gem.png"> 300</td>
-                                            <td><img src="img/emoji/gem.png"> 900</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table" style="font-size:70%;">
-                                    <thead>
-                                        <tr>
-                                            <th>Gemstone</th>
-                                            <th>Tiny</th>
-                                            <th>Small</th>
-                                            <th>Medium</th>
-                                            <th>Large</th>
-                                            <th>Huge</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Topaz</td>
-                                            <td><img src="img/emoji/gem.png"> 3</td>
-                                            <td><img src="img/emoji/gem.png"> 6</td>
-                                            <td><img src="img/emoji/gem.png"> 12</td>
-                                            <td><img src="img/emoji/gem.png"> 30</td>
-                                            <td><img src="img/emoji/gem.png"> 90</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Emerald</td>
-                                            <td><img src="img/emoji/gem.png"> 5</td>
-                                            <td><img src="img/emoji/gem.png"> 10</td>
-                                            <td><img src="img/emoji/gem.png"> 20</td>
-                                            <td><img src="img/emoji/gem.png"> 50</td>
-                                            <td><img src="img/emoji/gem.png"> 150</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Saphire</td>
-                                            <td><img src="img/emoji/gem.png"> 10</td>
-                                            <td><img src="img/emoji/gem.png"> 20</td>
-                                            <td><img src="img/emoji/gem.png"> 40</td>
-                                            <td><img src="img/emoji/gem.png"> 100</td>
-                                            <td><img src="img/emoji/gem.png"> 300</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Ruby</td>
-                                            <td><img src="img/emoji/gem.png"> 20</td>
-                                            <td><img src="img/emoji/gem.png"> 40</td>
-                                            <td><img src="img/emoji/gem.png"> 80</td>
-                                            <td><img src="img/emoji/gem.png"> 200</td>
-                                            <td><img src="img/emoji/gem.png"> 600</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Diamond</td>
-                                            <td><img src="img/emoji/gem.png"> 30</td>
-                                            <td><img src="img/emoji/gem.png"> 60</td>
-                                            <td><img src="img/emoji/gem.png"> 120</td>
-                                            <td><img src="img/emoji/gem.png"> 300</td>
-                                            <td><img src="img/emoji/gem.png"> 900</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <!-- Column two starts here -->
-                    <h3><i class="fas fa-info-circle"></i> Supporters</h3>
-                    <p>Want to support me? You can donate at the world SUPPORTSHAWN. Top supporters get their name in this section!</p>
-                    <div class="alert alert-success">
-                        <strong>Thank You!</strong> for using pwgems.com to calculate your gems. This website is in beta and is still being developed so please mind some bugs!
-                    </div>
-                    <div class="alert alert-warning">
-                        <strong>Known Issues</strong>
-                        <ul>
-                        <li>Progress Bar ghosting entries</li>
-                        <ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+<head>
+	<title>Pixelworlds Gems - Calculator</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<script src="scripts/calculate.js">
+	</script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+	</script>
+	<link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+	<link href="favicon.png" rel="icon"><!-- Styling of the page -->
+
+	<style>
+	</style>
+	<script>
+	<!-- For Tooltips -->
+	           $(document).ready(function(){
+	             $('[data-toggle="tooltip"]').tooltip();
+	           });
+	</script>
+</head>
+<body>
+	<!-- This is the Navigation Bar fixed at the top always.-->
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="index.html"><img alt="Logo" src="img/icon.png" style="width:40px;"></a> <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="Experimental" id="navbardrop"><i class="fas fa-flask"></i> Experimental</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="newcalculator.html">List Calculator <span class="badge badge-secondary">New</span></a> <a class="dropdown-item disabled" href="#">Item Creator <span class="badge badge-warning">WIP</span></a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">...</a>
+				</li>
+			</ul>
+		</div>
+	</nav><!-- Navigation bar ends here -->
+	<!-- Website content starts here. -->
+	<div class="container mt-4">
+		<div class="row">
+			<div class="col-sm-8">
+				<!-- Column one starts here -->
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link active" data-toggle="tab" href="#calc"><i class="fas fa-calculator"></i></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#guide"><i class="fas fa-table"></i></a>
+					</li>
+				</ul><!-- Tab panes -->
+				<div class="tab-content">
+					<div class="tab-pane container active" id="calc">
+						<form>
+							<div class="input-group mb-2 mt-4">
+								<div class="input-group-prepend">
+									<span class="input-group-text"><img src="img/fish/herring.png"></span>
+								</div><input class="form-control" id="Herring_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Herring_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Herring_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Herring_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Herring_Huge" oninput="calculate();" placeholder="Huge" type="number">
+							</div>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/kingfish.png"></span>
+									</div><input class="form-control" id="Kingfish_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Kingfish_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Kingfish_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Kingfish_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Kingfish_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/butterflyfish.png"></span>
+									</div><input class="form-control" id="Butterflyfish_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Butterflyfish_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Butterflyfish_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Butterflyfish_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Butterflyfish_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/butterflyfish.png"></span>
+									</div><input class="form-control" id="Goldfish_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Goldfish_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Goldfish_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Goldfish_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Goldfish_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/carp.png"></span>
+									</div><input class="form-control" id="Carp_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Carp_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Carp_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Carp_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Carp_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/halibut.png"></span>
+									</div><input class="form-control" id="Halibut_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Halibut_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Halibut_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Halibut_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Halibut_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/sea.png"></span>
+									</div><input class="form-control" id="Sea_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Sea_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Sea_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Sea_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Sea_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/tuna.png"></span>
+									</div><input class="form-control" id="Tuna_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Tuna_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Tuna_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Tuna_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Tuna_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/acid.png" style="height:24px"></span>
+									</div><input class="form-control" id="Acid_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Acid_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Acid_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Acid_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Acid_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/dumbfish.png"></span>
+									</div><input class="form-control" id="Dumbfish_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Dumbfish_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Dumbfish_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Dumbfish_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Dumbfish_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-4">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/fish/piranha.png"></span>
+									</div><input class="form-control" id="Piranha_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Piranha_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Piranha_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Piranha_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Piranha_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" style="width:55px"><img src="img/fish/topaz.png" style="height:22px"></span>
+									</div><input class="form-control" id="Topaz_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Topaz_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Topaz_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Topaz_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Topaz_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" style="width:55px"><img src="img/fish/emerald.png" style="height:22px"></span>
+									</div><input class="form-control" id="Emerald_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Emerald_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Emerald_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Emerald_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Emerald_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" style="width:55px"><img src="img/fish/sapphire.png" style="height:22px"></span>
+									</div><input class="form-control" id="Sapphire_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Sapphire_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Sapphire_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Sapphire_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Sapphire_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" style="width:55px"><img src="img/fish/ruby.png" style="height:22px"></span>
+									</div><input class="form-control" id="Ruby_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Ruby_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Ruby_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Ruby_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Ruby_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<form>
+								<div class="input-group mb-2">
+									<div class="input-group-prepend">
+										<span class="input-group-text" style="width:55px"><img src="img/fish/diamond.png" style="height:22px"></span>
+									</div><input class="form-control" id="Diamond_Tiny" oninput="calculate();" placeholder="Tiny" type="number"> <input class="form-control" id="Diamond_Small" oninput="calculate();" placeholder="Small" type="number"> <input class="form-control" id="Diamond_Medium" oninput="calculate();" placeholder="Medium" type="number"> <input class="form-control" id="Diamond_Large" oninput="calculate();" placeholder="Large" type="number"> <input class="form-control" id="Diamond_Huge" oninput="calculate();" placeholder="Huge" type="number">
+								</div>
+							</form>
+							<div class="list-group" style="margin-left: 2em">
+								<div class="input-group mb-3">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/emoji/gem.png"></span>
+									</div><input class="form-control" disabled id="total_gems" oninput="calculate();" placeholder="..." type="text">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/emoji/wl.png"></span>
+									</div><input class="form-control" disabled id="total_wl" oninput="calculate();" placeholder="..." type="text">
+									<div class="input-group-prepend">
+										<span class="input-group-text"><img src="img/emoji/byte.png"></span>
+									</div><input class="form-control" disabled id="total_bc" oninput="calculate();" placeholder="..." type="text">
+								</div>
+							</div>
+							<div class="card mx-0 mb-4">
+								<div class="card-header">
+									<a class="card-link" data-toggle="collapse" href="#collapseOne"><i class="fas fa-cog"></i> Advanced</a>
+								</div>
+								<div class="collapse" id="collapseOne">
+									<div class="card-body">
+										<form>
+											<label for="option_rate" id="label_option_rate">Gems per World Lock: 2500</label> <input class="custom-range" id="option_rate" max="3500" min="1500" oninput="calculate();" step="100" type="range" value="2500"> <label for="option_clan">Clan Level Bonus</label> <select class="custom-select" id="option_clan" oninput="calculate();">
+												<option selected value="1.00">
+													Choose a Clan Level
+												</option>
+												<option value="1.00">
+													No Clan
+												</option>
+												<option value="1.00">
+													Level 1
+												</option>
+												<option value="1.01">
+													Level 2
+												</option>
+												<option value="1.01">
+													Level 3
+												</option>
+												<option value="1.01">
+													Level 4
+												</option>
+												<option value="1.03">
+													Level 5
+												</option>
+												<option value="1.03">
+													Level 6
+												</option>
+												<option value="1.03">
+													Level 7
+												</option>
+												<option value="1.03">
+													Level 8
+												</option>
+												<option value="1.05">
+													Level 9
+												</option>
+												<option value="1.05">
+													Level 10
+												</option>
+											</select>
+										</form>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="tab-pane container fade" id="guide">
+						<!-- Gem price Guide -->
+						<div class="table-responsive mt-4" style="font-size:70%;">
+							<table class="table">
+								<thead>
+									<tr>
+										<th>Fish</th>
+										<th>Tiny</th>
+										<th>Small</th>
+										<th>Medium</th>
+										<th>Large</th>
+										<th>Huge</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Herring</td>
+										<td><img src="img/emoji/gem.png"> 10</td>
+										<td><img src="img/emoji/gem.png"> 40</td>
+										<td><img src="img/emoji/gem.png"> 70</td>
+										<td><img src="img/emoji/gem.png"> 100</td>
+										<td><img src="img/emoji/gem.png"> 300</td>
+									</tr>
+									<tr>
+										<td>Kingfish</td>
+										<td><img src="img/emoji/gem.png"> 10</td>
+										<td><img src="img/emoji/gem.png"> 40</td>
+										<td><img src="img/emoji/gem.png"> 70</td>
+										<td><img src="img/emoji/gem.png"> 100</td>
+										<td><img src="img/emoji/gem.png"> 300</td>
+									</tr>
+									<tr>
+										<td>Goldfish</td>
+										<td><img src="img/emoji/gem.png"> 15</td>
+										<td><img src="img/emoji/gem.png"> 60</td>
+										<td><img src="img/emoji/gem.png"> 105</td>
+										<td><img src="img/emoji/gem.png"> 150</td>
+										<td><img src="img/emoji/gem.png"> 600</td>
+									</tr>
+									<tr>
+										<td>Butterflyfish</td>
+										<td><img src="img/emoji/gem.png"> 15</td>
+										<td><img src="img/emoji/gem.png"> 60</td>
+										<td><img src="img/emoji/gem.png"> 105</td>
+										<td><img src="img/emoji/gem.png"> 150</td>
+										<td><img src="img/emoji/gem.png"> 600</td>
+									</tr>
+									<tr>
+										<td>Carp</td>
+										<td><img src="img/emoji/gem.png"> 20</td>
+										<td><img src="img/emoji/gem.png"> 80</td>
+										<td><img src="img/emoji/gem.png"> 140</td>
+										<td><img src="img/emoji/gem.png"> 200</td>
+										<td><img src="img/emoji/gem.png"> 600</td>
+									</tr>
+									<tr>
+										<td>Halibut</td>
+										<td><img src="img/emoji/gem.png"> 20</td>
+										<td><img src="img/emoji/gem.png"> 80</td>
+										<td><img src="img/emoji/gem.png"> 140</td>
+										<td><img src="img/emoji/gem.png"> 200</td>
+										<td><img src="img/emoji/gem.png"> 600</td>
+									</tr>
+									<tr>
+										<td>Sea Angler</td>
+										<td><img src="img/emoji/gem.png"> 30</td>
+										<td><img src="img/emoji/gem.png"> 120</td>
+										<td><img src="img/emoji/gem.png"> 210</td>
+										<td><img src="img/emoji/gem.png"> 300</td>
+										<td><img src="img/emoji/gem.png"> 900</td>
+									</tr>
+									<tr>
+										<td>Tuna</td>
+										<td><img src="img/emoji/gem.png"> 40</td>
+										<td><img src="img/emoji/gem.png"> 160</td>
+										<td><img src="img/emoji/gem.png"> 280</td>
+										<td><img src="img/emoji/gem.png"> 400</td>
+										<td><img src="img/emoji/gem.png"> 1200</td>
+									</tr>
+									<tr>
+										<td>Acid Puffer</td>
+										<td><img src="img/emoji/gem.png"> 80</td>
+										<td><img src="img/emoji/gem.png"> 320</td>
+										<td><img src="img/emoji/gem.png"> 560</td>
+										<td><img src="img/emoji/gem.png"> 800</td>
+										<td><img src="img/emoji/gem.png"> 2400</td>
+									</tr>
+									<tr>
+										<td>Dumbfish</td>
+										<td><img src="img/emoji/gem.png"> 5</td>
+										<td><img src="img/emoji/gem.png"> 10</td>
+										<td><img src="img/emoji/gem.png"> 30</td>
+										<td><img src="img/emoji/gem.png"> 50</td>
+										<td><img src="img/emoji/gem.png"> 100</td>
+									</tr>
+									<tr>
+										<td>Piranha</td>
+										<td><img src="img/emoji/gem.png"> 30</td>
+										<td><img src="img/emoji/gem.png"> 120</td>
+										<td><img src="img/emoji/gem.png"> 210</td>
+										<td><img src="img/emoji/gem.png"> 300</td>
+										<td><img src="img/emoji/gem.png"> 900</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="table-responsive">
+							<table class="table" style="font-size:70%;">
+								<thead>
+									<tr>
+										<th>Gemstone</th>
+										<th>Tiny</th>
+										<th>Small</th>
+										<th>Medium</th>
+										<th>Large</th>
+										<th>Huge</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Topaz</td>
+										<td><img src="img/emoji/gem.png"> 3</td>
+										<td><img src="img/emoji/gem.png"> 6</td>
+										<td><img src="img/emoji/gem.png"> 12</td>
+										<td><img src="img/emoji/gem.png"> 30</td>
+										<td><img src="img/emoji/gem.png"> 90</td>
+									</tr>
+									<tr>
+										<td>Emerald</td>
+										<td><img src="img/emoji/gem.png"> 5</td>
+										<td><img src="img/emoji/gem.png"> 10</td>
+										<td><img src="img/emoji/gem.png"> 20</td>
+										<td><img src="img/emoji/gem.png"> 50</td>
+										<td><img src="img/emoji/gem.png"> 150</td>
+									</tr>
+									<tr>
+										<td>Saphire</td>
+										<td><img src="img/emoji/gem.png"> 10</td>
+										<td><img src="img/emoji/gem.png"> 20</td>
+										<td><img src="img/emoji/gem.png"> 40</td>
+										<td><img src="img/emoji/gem.png"> 100</td>
+										<td><img src="img/emoji/gem.png"> 300</td>
+									</tr>
+									<tr>
+										<td>Ruby</td>
+										<td><img src="img/emoji/gem.png"> 20</td>
+										<td><img src="img/emoji/gem.png"> 40</td>
+										<td><img src="img/emoji/gem.png"> 80</td>
+										<td><img src="img/emoji/gem.png"> 200</td>
+										<td><img src="img/emoji/gem.png"> 600</td>
+									</tr>
+									<tr>
+										<td>Diamond</td>
+										<td><img src="img/emoji/gem.png"> 30</td>
+										<td><img src="img/emoji/gem.png"> 60</td>
+										<td><img src="img/emoji/gem.png"> 120</td>
+										<td><img src="img/emoji/gem.png"> 300</td>
+										<td><img src="img/emoji/gem.png"> 900</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<!-- Column two starts here -->
+				<h3><i class="fas fa-info-circle"></i> Supporters</h3>
+				<p>Want to support me? You can donate at the world SUPPORTSHAWN. Top supporters get their name in this section!</p>
+				<div class="alert alert-success">
+					<strong>Thank You!</strong> for using pwgems.com to calculate your gems. This website is in beta and is still being developed so please mind some bugs!
+				</div>
+				<div class="alert alert-warning">
+					<strong>Known Issues</strong>
+					<ul>
+						<li>Progress Bar ghosting entries</li>
+						<li style="list-style: none; display: inline">
+							<ul></ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>

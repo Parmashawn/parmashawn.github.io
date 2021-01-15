@@ -1,91 +1,81 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	  <title>Pixelworlds Gems</title>
-	  <meta charset="utf-8">
-	  <meta name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-	  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-		
-		<!-- Styling of the page -->
-		<style>
-		.jumbotron {
-			background: rgb(48,197,240);
-			background: -moz-linear-gradient(153deg, rgba(48,197,240,1) 0%, rgba(73,107,186,1) 100%);
-			background: -webkit-linear-gradient(153deg, rgba(48,197,240,1) 0%, rgba(73,107,186,1) 100%);
-			background: linear-gradient(153deg, rgba(48,197,240,1) 0%, rgba(73,107,186,1) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#30c5f0",endColorstr="#496bba",GradientType=1);
-		}
-		</style>
-	</head>
-	
-	
-	
-	<body>
-		<!-- This is the Navigation Bar fixed at the top always.-->
-		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-            <a class="navbar-brand" href="index.html"><img src="img/icon.png" alt="Logo" style="width:40px;"></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator </a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="Experimental" id="navbardrop" data-toggle="dropdown">
-                        <i class="fas fa-flask"></i> Experimental
-                      </a>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" href="newcalculator.html">List Calculator <span class="badge badge-secondary">New</span></a>
-                        <a class="dropdown-item disabled" href="#">Item Creator <span class="badge badge-warning">WIP</span></a>
-                      </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">...</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-		<!-- Navigation bar ends here -->
-		<!-- Website content starts here. Main page has a Jumbotron -->
-		<div class="container">
-			<div class="jumbotron text-center mt-4">
-				<h1>Pixelworlds Gems</h1>
-				<p>The Best Pixelworlds Calculation Tool!</p> 
-				<a href="calculator.html" class="btn btn-dark"><img src="img/emoji/pixelian.png"> Start Calculating</a>
-			</div>
-		<!-- Jumotron ends here and info begins bellow -->
+<head>
+	<title>Pixelworlds Gems</title>
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+	</script>
+	<link href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" rel="stylesheet">
+	<link href="favicon.png" rel="icon"><!-- Styling of the page -->
+
+	<style>
+	       .jumbotron {
+	           background: rgb(48,197,240);
+	           background: -moz-linear-gradient(153deg, rgba(48,197,240,1) 0%, rgba(73,107,186,1) 100%);
+	           background: -webkit-linear-gradient(153deg, rgba(48,197,240,1) 0%, rgba(73,107,186,1) 100%);
+	           background: linear-gradient(153deg, rgba(48,197,240,1) 0%, rgba(73,107,186,1) 100%);
+	           filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#30c5f0",endColorstr="#496bba",GradientType=1);
+	       }
+	</style>
+</head>
+<body>
+	<!-- This is the Navigation Bar fixed at the top always.-->
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="index.html"><img alt="Logo" src="img/icon.png" style="width:40px;"></a> <button class="navbar-toggler" data-target="#collapsibleNavbar" data-toggle="collapse" type="button"><span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link active" href="index.html"><i class="fas fa-home"></i> Home</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="Experimental" id="navbardrop"><i class="fas fa-flask"></i> Experimental</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="newcalculator.html">List Calculator <span class="badge badge-secondary">New</span></a> <a class="dropdown-item disabled" href="#">Item Creator <span class="badge badge-warning">WIP</span></a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">...</a>
+				</li>
+			</ul>
+		</div>
+	</nav><!-- Navigation bar ends here -->
+	<!-- Website content starts here. Main page has a Jumbotron -->
+	<div class="container">
+		<div class="jumbotron text-center mt-4">
+			<h1>Pixelworlds Gems</h1>
+			<p>The Best Pixelworlds Calculation Tool!</p><a class="btn btn-dark" href="calculator.html"><img src="img/emoji/pixelian.png"> Start Calculating</a>
+		</div><!-- Jumotron ends here and info begins bellow -->
 		<div class="alert alert-warning alert-dismissible fade show">
-			<button type="button" class="close" data-dismiss="alert">&times;</button>
-			<strong>NOTE!</strong> This website is still a work in progress and there might be some minor issues. If you do encounter an issue then please do let me know
+			<button class="close" data-dismiss="alert" type="button">&times;</button> <strong>NOTE!</strong> This website is still a work in progress and there might be some minor issues. If you do encounter an issue then please do let me know
 		</div>
-			<div class="row">
-				<div class="col-sm-4"> <!-- Column one starts here -->
-				  <h3>What</h3>
-				  <p>Pixelworlds Gems is mainly a gem calculating website for players of <a href="http://kukouri.com/#game" target="_blank">Pixel Worlds: MMO Sandbox</a>.
-				  This site is a useful tool that lets users calculate the amount of gems they can get from fishes or gemstones in the game.</p>
-				</div>
-				<div class="col-sm-4"> <!-- Column two starts here -->
-				  <h3>Why</h3>
-				  <p>This site was created because there was not an advanced solution to gem trading between players.
-				  Many of the existing gem calculators are simple and don't have advanced options, further more there are few websites which 
-				  are as easily accessible as a six-letter website.</p>
-				</div>
-				<div class="col-sm-4"> <!-- Column three starts here -->
-					<h3>Socials</h3>
-					<hr>
-					<p><a href="https://www.youtube.com/channel/UCZKJokVnc81qNQE2QimA3Ag" target="_blank"><i class="fab fa-youtube"></i> Pixelworlds News</a></p>
-					<p><a href="https://www.pixelworldsgame.com/t/pwgems-com-gem-calculator-for-pixelworlds/2411?u=shawn" target="_blank"><i class="fab fa-discourse"></i> Forums</a></p>
-				</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<!-- Column one starts here -->
+				<h3>What</h3>
+				<p>Pixelworlds Gems is mainly a gem calculating website for players of <a href="http://kukouri.com/#game" target="_blank">Pixel Worlds: MMO Sandbox</a>. This site is a useful tool that lets users calculate the amount of gems they can get from fishes or gemstones in the game.</p>
+			</div>
+			<div class="col-sm-4">
+				<!-- Column two starts here -->
+				<h3>Why</h3>
+				<p>This site was created because there was not an advanced solution to gem trading between players. Many of the existing gem calculators are simple and don't have advanced options, further more there are few websites which are as easily accessible as a six-letter website.</p>
+			</div>
+			<div class="col-sm-4">
+				<!-- Column three starts here -->
+				<h3>Socials</h3>
+				<hr>
+				<p><a href="https://www.youtube.com/channel/UCZKJokVnc81qNQE2QimA3Ag" target="_blank"><i class="fab fa-youtube"></i> Pixelworlds News</a></p>
+				<p><a href="https://www.pixelworldsgame.com/t/pwgems-com-gem-calculator-for-pixelworlds/2411?u=shawn" target="_blank"><i class="fab fa-discourse"></i> Forums</a></p>
 			</div>
 		</div>
-	</body>
+	</div>
+</body>
 </html>
