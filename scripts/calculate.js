@@ -36,7 +36,7 @@ function calculate() { //main calculation function
 	var clan_modifier = document.getElementById("option_clan").value; 
 	var worldlock_rate = document.getElementById("option_rate").value; //this will be an option for the rate of worldlocks
 	var table = document.getElementById("fish_table");
-	
+	var total_amount = 0;
 	document.getElementById("label_option_rate").innerHTML = "Gems per World Lock: " + worldlock_rate
 	
 	var i;
@@ -162,6 +162,7 @@ function calculate() { //main calculation function
 		if (fish_type == "Diamond" && fish_size == "Large") {var fish_type_modifier = 300; fish_total += (fish_amount * fish_type_modifier); console.log("large checkpoint")}
 		if (fish_type == "Diamond" && fish_size == "Huge") {var fish_type_modifier = 900; fish_total += (fish_amount * fish_type_modifier); console.log("huge checkpoint")}
 		
+		total_amount += fish_amount;
 	}
 	
 	// Find and set the boxes for total gems, total wls, and total byte
@@ -173,4 +174,34 @@ function calculate() { //main calculation function
 	total_wl.value = Math.round(fish_total / worldlock_rate);
 	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)); // byte is temporarily same as wls because im too tired to think of the math right now.
 	
+	
+	// Progress Bar code starts here:
+	var bar = document.getElementById("total_bar").children;
+	
+	var i;
+	for (i=1;i < table.rows.length;i++) {
+		var tablecells =  table.rows[i].cells;
+		var fish_amount = parseInt(tablecells[1].innerHTML);
+		var fish_type = tablecells[2].innerHTML;
+		console.log("check " + total_amount);
+		var bar_percent = (fish_amount / total_amount)*100;
+		
+		if (fish_type == "Herring") {document.getElementById("bar_Herring").style.width = bar_percent + "%";}
+		if (fish_type == "Kingfish") {document.getElementById("bar_Kingfish").style.width = bar_percent + "%";}
+		if (fish_type == "Goldfish") {document.getElementById("bar_Goldfish").style.width = bar_percent + "%";}
+		if (fish_type == "Butterflyfish") {document.getElementById("bar_Butterflyfish").style.width = bar_percent + "%";}
+		if (fish_type == "Carp") {document.getElementById("bar_Carp").style.width = bar_percent + "%";}
+		if (fish_type == "Halibut") {document.getElementById("bar_Halibut").style.width = bar_percent + "%";}
+		if (fish_type == "Sea Angler") {document.getElementById("bar_Sea").style.width = bar_percent + "%";}
+		if (fish_type == "Tuna") {document.getElementById("bar_Tuna").style.width = bar_percent + "%";}
+		if (fish_type == "Acid Puffer") {document.getElementById("bar_Acid").style.width = bar_percent + "%";}
+		if (fish_type == "Dumbfish") {document.getElementById("bar_Dumbfish").style.width = bar_percent + "%";}
+		if (fish_type == "Piranha") {document.getElementById("bar_Piranha").style.width = bar_percent + "%";}
+		if (fish_type == "Topaz") {document.getElementById("bar_Topaz").style.width = bar_percent + "%";}
+		if (fish_type == "Emerald") {document.getElementById("bar_Emerald").style.width = bar_percent + "%";}
+		if (fish_type == "Sapphire") {document.getElementById("bar_Sapphire").style.width = bar_percent + "%";}
+		if (fish_type == "Ruby") {document.getElementById("bar_Ruby").style.width = bar_percent + "%";}
+		if (fish_type == "Diamond") {document.getElementById("bar_Diamond").style.width = bar_percent + "%";}
+		
+	}
 }
