@@ -152,7 +152,7 @@
 							</thead>
 							<tbody></tbody>
 						</table>
-						<div class="list-group" style="margin-left: 2em">
+						<div class="list-group">
 							<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text"><img src="img/emoji/gem.png"></span>
@@ -160,9 +160,6 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><img src="img/emoji/wl.png"></span>
 								</div><input class="form-control" disabled id="total_wl" placeholder="..." type="text">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><img src="img/emoji/byte.png"></span>
-								</div><input class="form-control" disabled id="total_bc" placeholder="..." type="text">
 							</div>
 						</div>
 						<div class="card mx-0 mb-4">
@@ -171,6 +168,11 @@
 							</div>
 							<div class="collapse" id="collapseOne">
 								<div class="card-body">
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text"><img src="img/emoji/byte.png"></span>
+										</div><input class="form-control" disabled id="total_bc" placeholder="..." type="text">
+									</div>
 									<form>
 										<label for="option_rate" id="label_option_rate">Gems per World Lock: 2500</label> <input class="custom-range" id="option_rate" max="3500" min="1500" oninput="calculate();" step="100" type="range" value="2500"> <label for="option_clan">Clan Level Bonus</label> <select class="custom-select" id="option_clan" oninput="calculate();">
 											<option selected value="1.00">
