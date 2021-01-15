@@ -4,7 +4,7 @@
         <title>Pixelworlds Gems - Calculator</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="scripts/calculate.js"></script>
+        <script src="scripts/newcalculate.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -31,11 +31,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="calculator.html"><i class="fas fa-calculator"></i> Calculator </a>
                     </li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="Experimental" id="navbardrop" data-toggle="dropdown">
+                      <a class="nav-link dropdown-toggle active" href="Experimental" id="navbardrop" data-toggle="dropdown">
                         <i class="fas fa-flask"></i> Experimental
                       </a>
                       <div class="dropdown-menu">
@@ -66,211 +66,66 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div class="tab-pane container active" id="calc">
-                        <form>
-                          <div class="input-group mb-2 mt-4">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/herring.png"></span>
+                            <div class="input-group mb-3 mt-4">
+                                <!-- the dropdown lists for fish, amount, and size. -->
+                                <div class="input-group-append">
+                                    <input type="number" class="form-control" placeholder="#" id="fish_amount" style="width:65px;" min="0" value="0" max="9999">
+                                    <select class="form-control" id="fish_type" name="fish type">
+                                        <option disabled>-Fishes-</option>
+                                        <option value="Herring">Herring</option>
+                                        <option value="Kingfish">Kingfish</option>
+                                        <option value="Goldfish">Goldfish</option>
+                                        <option value="Butterflyfish">Butterflyfish</option>
+                                        <option value="Carp">Carp</option>
+                                        <option value="Halibut">Halibut</option>
+                                        <option value="Sea Angler">Sea Angler</option>
+                                        <option value="Tuna">Tuna</option>
+                                        <option value="Acid Puffer">Acid Puffer</option>
+                                        <option value="Dumbfish">Dumbfish</option>
+                                        <option value="Piranha">Piranha</option>
+                                        <option disabled>-Gemstones-</option>
+                                        <option value="Topaz">Topaz</option>
+                                        <option value="Emerald">Emerald</option>
+                                        <option value="Sapphire">Sapphire</option>
+                                        <option value="Ruby">Ruby</option>
+                                        <option value="Diamond">Diamond</option>
+                                    </select>
+                                    <select class="form-control" id="fish_size" name="fish size">
+                                        <option value="Tiny">Tiny</option>
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large">Large</option>
+                                        <option value="Huge">Huge</option>
+                                    </select>
+                                    <button class="btn btn-primary" type="button" onclick="addRow()"><i class="fas fa-plus"></i></button>  
+                                </div>
                             </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Herring_Huge" placeholder="Huge">
-                          </div>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/kingfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Kingfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/butterflyfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Butterflyfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/butterflyfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Goldfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/carp.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Carp_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/halibut.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Halibut_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/sea.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sea_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/tuna.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Tuna_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/acid.png" style="height:24px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Acid_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/dumbfish.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Dumbfish_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-4">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text"><img src="img/fish/piranha.png"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Piranha_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/topaz.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Topaz_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/emerald.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Emerald_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/sapphire.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Sapphire_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/ruby.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Ruby_Huge" placeholder="Huge">
-                          </div>
-                        </form>
-                        <form>
-                          <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" style="width:55px"><img src="img/fish/diamond.png" style="height:22px"></span>
-                            </div>
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Tiny" placeholder="Tiny">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Small" placeholder="Small">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Medium" placeholder="Medium">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Large" placeholder="Large">
-                            <input type="number" class="form-control" oninput="calculate();" id="Diamond_Huge" placeholder="Huge">
-                          </div>
-                        </form>
+                            <table class="table mb-5" id="fish_table">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th></th>
+                                        <th>#</th>
+                                        <th>Type</th>
+                                        <th>Size</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
                             <ul class="list-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><img src="img/emoji/gem.png"></span>
                                     </div>
-                                    <input type="text" id="total_gems" class="form-control" oninput="calculate();" placeholder="..." disabled>
+                                    <input type="text" id="total_gems" class="form-control" placeholder="..." disabled>
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><img src="img/emoji/wl.png"></span>
                                     </div>
-                                    <input type="text" id="total_wl" class="form-control" oninput="calculate();" placeholder="..." disabled>
+                                    <input type="text" id="total_wl" class="form-control" placeholder="..." disabled>
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><img src="img/emoji/byte.png"></span>
                                     </div>
-                                    <input type="text" id="total_bc" class="form-control" oninput="calculate();" placeholder="..." disabled>
+                                    <input type="text" id="total_bc" class="form-control" placeholder="..." disabled>
                                 </div>
                             </ul>
                             <div class="card mx-0 mb-4">
@@ -300,6 +155,24 @@
                                                 <option value="1.05">Level 10</option>
                                             </select>
                                         </form>
+                                    </div>
+                                    <div class="progress mb-4 mx-3" id="total_bar">
+                                        <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Herring">Herring</div>
+                                        <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Kingfish">Kingfish</div>
+                                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Goldfish">Goldfish</div>
+                                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Butterflyfish">Butterflyfish</div>
+                                        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Carp">Carp</div>
+                                        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Halibut">Halibut</div>
+                                        <div class="progress-bar bg-dark progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Angler">Sea Angler</div>
+                                        <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Tuna">Tuna</div>
+                                        <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Acid">Acid Puffer</div>
+                                        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Dumbfish">Dumbfish</div>
+                                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Piranha">Piranha</div>
+                                        <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Topaz">Topaz</div>
+                                        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Emerald">Emerald</div>
+                                        <div class="progress-bar bg-dark progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Sapphire">Sapphire</div>
+                                        <div class="progress-bar bg-danger progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Ruby">Ruby</div>
+                                        <div class="progress-bar bg-primary progress-bar-striped progress-bar-animated" style="width:0%" id="bar_Diamond">Diamond</div>
                                     </div>
                                 </div>
                             </div>

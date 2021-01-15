@@ -1,169 +1,125 @@
 
-function addRow() { // adds a new entry to the table
-	
-    var fish_amount = document.getElementById("fish_amount");
-    var fish_type = document.getElementById("fish_type");
-    var fish_size = document.getElementById("fish_size");
-	var table = document.getElementById("fish_table");
- 
-    var rowCount = table.rows.length;
-    var row = table.insertRow(rowCount);
- 
-    row.insertCell(0).innerHTML = '<i class="fas fa-trash-alt" onClick="deleteRow(this)"></i>';
-    row.insertCell(1).innerHTML = +fish_amount.value;
-    row.insertCell(2).innerHTML = fish_type.value;
-	row.insertCell(3).innerHTML = fish_size.value;
-	
-	console.log("Added " + fish_amount.value + " " + fish_size.value + " " + fish_type.value + " to the table"); //prints to console
-	
-	calculate();
-}
-
-function deleteRow(obj) { // function for the delte button on a table entry
-      
-    var index = obj.parentNode.parentNode.rowIndex;
-    var table = document.getElementById("fish_table");
-    table.deleteRow(index);
-	
-	console.log("Removed entry from table") //prints to console
-    
-	calculate();
-}
-
 function calculate() { //main calculation function
 
 	var fish_total = 0;
 	var clan_modifier = document.getElementById("option_clan").value; 
 	var worldlock_rate = document.getElementById("option_rate").value; //this will be an option for the rate of worldlocks
-	var table = document.getElementById("fish_table");
 	var total_amount = 0;
-	document.getElementById("label_option_rate").innerHTML = "Gems per World Lock: " + worldlock_rate
+	document.getElementById("label_option_rate").innerHTML = "Gems per World Lock: " + worldlock_rate;
+
+	// Herring
+	fish_total += (document.getElementById("Herring_Tiny").value * 10) * clan_modifier;
+	fish_total += (document.getElementById("Herring_Small").value * 40) * clan_modifier;
+	fish_total += (document.getElementById("Herring_Medium").value * 70) * clan_modifier;
+	fish_total += (document.getElementById("Herring_Large").value * 100) * clan_modifier;
+	fish_total += (document.getElementById("Herring_Huge").value * 300) * clan_modifier;
+
+	// Kingfish
+	fish_total += (document.getElementById("Kingfish_Tiny").value * 10) * clan_modifier;
+	fish_total += (document.getElementById("Kingfish_Small").value * 40) * clan_modifier;
+	fish_total += (document.getElementById("Kingfish_Medium").value * 70) * clan_modifier;
+	fish_total += (document.getElementById("Kingfish_Large").value * 100) * clan_modifier;
+	fish_total += (document.getElementById("Kingfish_Huge").value * 300) * clan_modifier;
+
+	// Butterflyfish
+	fish_total += (document.getElementById("Butterflyfish_Tiny").value * 15) * clan_modifier;
+	fish_total += (document.getElementById("Butterflyfish_Small").value * 60) * clan_modifier;
+	fish_total += (document.getElementById("Butterflyfish_Medium").value * 105) * clan_modifier;
+	fish_total += (document.getElementById("Butterflyfish_Large").value * 150) * clan_modifier;
+	fish_total += (document.getElementById("Butterflyfish_Huge").value * 600) * clan_modifier;
+
+	// Goldfish
+	fish_total += (document.getElementById("Goldfish_Tiny").value * 15) * clan_modifier;
+	fish_total += (document.getElementById("Goldfish_Small").value * 60) * clan_modifier;
+	fish_total += (document.getElementById("Goldfish_Medium").value * 105) * clan_modifier;
+	fish_total += (document.getElementById("Goldfish_Large").value * 150) * clan_modifier;
+	fish_total += (document.getElementById("Goldfish_Huge").value * 600) * clan_modifier;
+
+	// Carp
+	fish_total += (document.getElementById("Carp_Tiny").value * 20) * clan_modifier;
+	fish_total += (document.getElementById("Carp_Small").value * 80) * clan_modifier;
+	fish_total += (document.getElementById("Carp_Medium").value * 140) * clan_modifier;
+	fish_total += (document.getElementById("Carp_Large").value * 200) * clan_modifier;
+	fish_total += (document.getElementById("Carp_Huge").value * 600) * clan_modifier;
+
+	// Halibut
+	fish_total += (document.getElementById("Halibut_Tiny").value * 20) * clan_modifier;
+	fish_total += (document.getElementById("Halibut_Small").value * 80) * clan_modifier;
+	fish_total += (document.getElementById("Halibut_Medium").value * 140) * clan_modifier;
+	fish_total += (document.getElementById("Halibut_Large").value * 200) * clan_modifier;
+	fish_total += (document.getElementById("Halibut_Huge").value * 600) * clan_modifier;
+
+	// Sea Angler
+	fish_total += (document.getElementById("Sea_Tiny").value * 30) * clan_modifier;
+	fish_total += (document.getElementById("Sea_Small").value * 120) * clan_modifier;
+	fish_total += (document.getElementById("Sea_Medium").value * 210) * clan_modifier;
+	fish_total += (document.getElementById("Sea_Large").value * 300) * clan_modifier;
+	fish_total += (document.getElementById("Sea_Huge").value * 900) * clan_modifier;
 	
-	var i;
-	for (i=1;i < table.rows.length;i++) {
-		var tablecells =  table.rows[i].cells;
-		var fish_amount = parseInt(tablecells[1].innerHTML);
-		var fish_type = tablecells[2].innerHTML;
-		var fish_size = tablecells[3].innerHTML;
-		
-		console.log(fish_amount);
-		console.log(fish_type);
-		console.log(fish_size);
-		
-		//Calculate Herring
-		if (fish_type == "Herring" && fish_size == "Tiny") {var fish_type_modifier = 10; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Herring" && fish_size == "Small") {var fish_type_modifier = 40; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Herring" && fish_size == "Medium") {var fish_type_modifier = 70; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Herring" && fish_size == "Large") {var fish_type_modifier = 100; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Herring" && fish_size == "Huge") {var fish_type_modifier = 300; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Kingfish
-		if (fish_type == "Kingfish" && fish_size == "Tiny") {var fish_type_modifier = 10; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Kingfish" && fish_size == "Small") {var fish_type_modifier = 40; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Kingfish" && fish_size == "Medium") {var fish_type_modifier = 70; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Kingfish" && fish_size == "Large") {var fish_type_modifier = 100; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Kingfish" && fish_size == "Huge") {var fish_type_modifier = 300; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Goldfish
-		if (fish_type == "Goldfish" && fish_size == "Tiny") {var fish_type_modifier = 15; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Goldfish" && fish_size == "Small") {var fish_type_modifier = 60; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Goldfish" && fish_size == "Medium") {var fish_type_modifier = 105; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Goldfish" && fish_size == "Large") {var fish_type_modifier = 150; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Goldfish" && fish_size == "Huge") {var fish_type_modifier = 600; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Butterflyfish
-		if (fish_type == "Butterflyfish" && fish_size == "Tiny") {var fish_type_modifier = 15; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Butterflyfish" && fish_size == "Small") {var fish_type_modifier = 60; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Butterflyfish" && fish_size == "Medium") {var fish_type_modifier = 105; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Butterflyfish" && fish_size == "Large") {var fish_type_modifier = 150; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Butterflyfish" && fish_size == "Huge") {var fish_type_modifier = 600; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Carp
-		if (fish_type == "Carp" && fish_size == "Tiny") {var fish_type_modifier = 20; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Carp" && fish_size == "Small") {var fish_type_modifier = 80; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Carp" && fish_size == "Medium") {var fish_type_modifier = 140; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Carp" && fish_size == "Large") {var fish_type_modifier = 200; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Carp" && fish_size == "Huge") {var fish_type_modifier = 600; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Halibut
-		if (fish_type == "Halibut" && fish_size == "Tiny") {var fish_type_modifier = 20; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Halibut" && fish_size == "Small") {var fish_type_modifier = 80; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Halibut" && fish_size == "Medium") {var fish_type_modifier = 140; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Halibut" && fish_size == "Large") {var fish_type_modifier = 200; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Halibut" && fish_size == "Huge") {var fish_type_modifier = 600; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Sea Angler
-		if (fish_type == "Sea Angler" && fish_size == "Tiny") {var fish_type_modifier = 30; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Sea Angler" && fish_size == "Small") {var fish_type_modifier = 120; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Sea Angler" && fish_size == "Medium") {var fish_type_modifier = 210; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Sea Angler" && fish_size == "Large") {var fish_type_modifier = 300; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Sea Angler" && fish_size == "Huge") {var fish_type_modifier = 900; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Tuna
-		if (fish_type == "Tuna" && fish_size == "Tiny") {var fish_type_modifier = 40; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Tuna" && fish_size == "Small") {var fish_type_modifier = 160; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Tuna" && fish_size == "Medium") {var fish_type_modifier = 280; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Tuna" && fish_size == "Large") {var fish_type_modifier = 400; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Tuna" && fish_size == "Huge") {var fish_type_modifier = 1200; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Acid Puffer
-		if (fish_type == "Acid Puffer" && fish_size == "Tiny") {var fish_type_modifier = 80; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Acid Puffer" && fish_size == "Small") {var fish_type_modifier = 320; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Acid Puffer" && fish_size == "Medium") {var fish_type_modifier = 560; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Acid Puffer" && fish_size == "Large") {var fish_type_modifier = 800; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Acid Puffer" && fish_size == "Huge") {var fish_type_modifier = 2400; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Dumbfish
-		if (fish_type == "Dumbfish" && fish_size == "Tiny") {var fish_type_modifier = 5; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Dumbfish" && fish_size == "Small") {var fish_type_modifier = 10; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Dumbfish" && fish_size == "Medium") {var fish_type_modifier = 30; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Dumbfish" && fish_size == "Large") {var fish_type_modifier = 50; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Dumbfish" && fish_size == "Huge") {var fish_type_modifier = 100; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Piranha
-		if (fish_type == "Piranha" && fish_size == "Tiny") {var fish_type_modifier = 30; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("tiny checkpoint")}
-		if (fish_type == "Piranha" && fish_size == "Small") {var fish_type_modifier = 120; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("small checkpoint")}
-		if (fish_type == "Piranha" && fish_size == "Medium") {var fish_type_modifier = 210; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("medium checkpoint")}
-		if (fish_type == "Piranha" && fish_size == "Large") {var fish_type_modifier = 300; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("large checkpoint")}
-		if (fish_type == "Piranha" && fish_size == "Huge") {var fish_type_modifier = 900; fish_total += (fish_amount * fish_type_modifier) * clan_modifier; console.log("huge checkpoint")}
-		
-		//Calculate Topaz
-		if (fish_type == "Topaz" && fish_size == "Tiny") {var fish_type_modifier = 3; fish_total += (fish_amount * fish_type_modifier); console.log("tiny checkpoint")}
-		if (fish_type == "Topaz" && fish_size == "Small") {var fish_type_modifier = 6; fish_total += (fish_amount * fish_type_modifier); console.log("small checkpoint")}
-		if (fish_type == "Topaz" && fish_size == "Medium") {var fish_type_modifier = 12; fish_total += (fish_amount * fish_type_modifier); console.log("medium checkpoint")}
-		if (fish_type == "Topaz" && fish_size == "Large") {var fish_type_modifier = 30; fish_total += (fish_amount * fish_type_modifier); console.log("large checkpoint")}
-		if (fish_type == "Topaz" && fish_size == "Huge") {var fish_type_modifier = 90; fish_total += (fish_amount * fish_type_modifier); console.log("huge checkpoint")}
-		
-		//Calculate Emerald
-		if (fish_type == "Emerald" && fish_size == "Tiny") {var fish_type_modifier = 5; fish_total += (fish_amount * fish_type_modifier); console.log("tiny checkpoint")}
-		if (fish_type == "Emerald" && fish_size == "Small") {var fish_type_modifier = 10; fish_total += (fish_amount * fish_type_modifier); console.log("small checkpoint")}
-		if (fish_type == "Emerald" && fish_size == "Medium") {var fish_type_modifier = 20; fish_total += (fish_amount * fish_type_modifier); console.log("medium checkpoint")}
-		if (fish_type == "Emerald" && fish_size == "Large") {var fish_type_modifier = 50; fish_total += (fish_amount * fish_type_modifier); console.log("large checkpoint")}
-		if (fish_type == "Emerald" && fish_size == "Huge") {var fish_type_modifier = 150; fish_total += (fish_amount * fish_type_modifier); console.log("huge checkpoint")}
-		
-		//Calculate Sapphire
-		if (fish_type == "Sapphire" && fish_size == "Tiny") {var fish_type_modifier = 10; fish_total += (fish_amount * fish_type_modifier); console.log("tiny checkpoint")}
-		if (fish_type == "Sapphire" && fish_size == "Small") {var fish_type_modifier = 20; fish_total += (fish_amount * fish_type_modifier); console.log("small checkpoint")}
-		if (fish_type == "Sapphire" && fish_size == "Medium") {var fish_type_modifier = 40; fish_total += (fish_amount * fish_type_modifier); console.log("medium checkpoint")}
-		if (fish_type == "Sapphire" && fish_size == "Large") {var fish_type_modifier = 100; fish_total += (fish_amount * fish_type_modifier); console.log("large checkpoint")}
-		if (fish_type == "Sapphire" && fish_size == "Huge") {var fish_type_modifier = 300; fish_total += (fish_amount * fish_type_modifier); console.log("huge checkpoint")}
-		
-		//Calculate Ruby
-		if (fish_type == "Ruby" && fish_size == "Tiny") {var fish_type_modifier = 20; fish_total += (fish_amount * fish_type_modifier); console.log("tiny checkpoint")}
-		if (fish_type == "Ruby" && fish_size == "Small") {var fish_type_modifier = 60; fish_total += (fish_amount * fish_type_modifier); console.log("small checkpoint")}
-		if (fish_type == "Ruby" && fish_size == "Medium") {var fish_type_modifier = 80; fish_total += (fish_amount * fish_type_modifier); console.log("medium checkpoint")}
-		if (fish_type == "Ruby" && fish_size == "Large") {var fish_type_modifier = 200; fish_total += (fish_amount * fish_type_modifier); console.log("large checkpoint")}
-		if (fish_type == "Ruby" && fish_size == "Huge") {var fish_type_modifier = 600; fish_total += (fish_amount * fish_type_modifier); console.log("huge checkpoint")}
-		
-		//Calculate Diamond
-		if (fish_type == "Diamond" && fish_size == "Tiny") {var fish_type_modifier = 30; fish_total += (fish_amount * fish_type_modifier); console.log("tiny checkpoint")}
-		if (fish_type == "Diamond" && fish_size == "Small") {var fish_type_modifier = 60; fish_total += (fish_amount * fish_type_modifier); console.log("small checkpoint")}
-		if (fish_type == "Diamond" && fish_size == "Medium") {var fish_type_modifier = 120; fish_total += (fish_amount * fish_type_modifier); console.log("medium checkpoint")}
-		if (fish_type == "Diamond" && fish_size == "Large") {var fish_type_modifier = 300; fish_total += (fish_amount * fish_type_modifier); console.log("large checkpoint")}
-		if (fish_type == "Diamond" && fish_size == "Huge") {var fish_type_modifier = 900; fish_total += (fish_amount * fish_type_modifier); console.log("huge checkpoint")}
-		
-		total_amount += fish_amount;
-	}
+	// Tuna
+	fish_total += (document.getElementById("Tuna_Tiny").value * 40) * clan_modifier;
+	fish_total += (document.getElementById("Tuna_Small").value * 160) * clan_modifier;
+	fish_total += (document.getElementById("Tuna_Medium").value * 280) * clan_modifier;
+	fish_total += (document.getElementById("Tuna_Large").value * 400) * clan_modifier;
+	fish_total += (document.getElementById("Tuna_Huge").value * 1200) * clan_modifier;
+
+	// Acid
+	fish_total += (document.getElementById("Acid_Tiny").value * 80) * clan_modifier;
+	fish_total += (document.getElementById("Acid_Small").value * 320) * clan_modifier;
+	fish_total += (document.getElementById("Acid_Medium").value * 560) * clan_modifier;
+	fish_total += (document.getElementById("Acid_Large").value * 800) * clan_modifier;
+	fish_total += (document.getElementById("Acid_Huge").value * 2400) * clan_modifier;
+
+	// Dumbfish
+	fish_total += (document.getElementById("Dumbfish_Tiny").value * 5) * clan_modifier;
+	fish_total += (document.getElementById("Dumbfish_Small").value * 10) * clan_modifier;
+	fish_total += (document.getElementById("Dumbfish_Medium").value * 30) * clan_modifier;
+	fish_total += (document.getElementById("Dumbfish_Large").value * 50) * clan_modifier;
+	fish_total += (document.getElementById("Dumbfish_Huge").value * 100) * clan_modifier;
+
+	// Piranha
+	fish_total += (document.getElementById("Piranha_Tiny").value * 30) * clan_modifier;
+	fish_total += (document.getElementById("Piranha_Small").value * 120) * clan_modifier;
+	fish_total += (document.getElementById("Piranha_Medium").value * 210) * clan_modifier;
+	fish_total += (document.getElementById("Piranha_Large").value * 300) * clan_modifier;
+	fish_total += (document.getElementById("Piranha_Huge").value * 900) * clan_modifier;
+
+	// Topaz
+	fish_total += (document.getElementById("Topaz_Tiny").value * 3);
+	fish_total += (document.getElementById("Topaz_Small").value * 6);
+	fish_total += (document.getElementById("Topaz_Medium").value * 12);
+	fish_total += (document.getElementById("Topaz_Large").value * 30);
+	fish_total += (document.getElementById("Topaz_Huge").value * 90);
+
+	// Emerald
+	fish_total += (document.getElementById("Emerald_Tiny").value * 5);
+	fish_total += (document.getElementById("Emerald_Small").value * 10);
+	fish_total += (document.getElementById("Emerald_Medium").value * 20);
+	fish_total += (document.getElementById("Emerald_Large").value * 50);
+	fish_total += (document.getElementById("Emerald_Huge").value * 150);
+
+	// Sapphire
+	fish_total += (document.getElementById("Sapphire_Tiny").value * 10);
+	fish_total += (document.getElementById("Sapphire_Small").value * 20);
+	fish_total += (document.getElementById("Sapphire_Medium").value * 40);
+	fish_total += (document.getElementById("Sapphire_Large").value * 100);
+	fish_total += (document.getElementById("Sapphire_Huge").value * 300);
+
+	// Ruby
+	fish_total += (document.getElementById("Ruby_Tiny").value * 20);
+	fish_total += (document.getElementById("Ruby_Small").value * 40);
+	fish_total += (document.getElementById("Ruby_Medium").value * 80);
+	fish_total += (document.getElementById("Ruby_Large").value * 200);
+	fish_total += (document.getElementById("Ruby_Huge").value * 600);
+
+	// Diamond
+	fish_total += (document.getElementById("Diamond_Tiny").value * 30);
+	fish_total += (document.getElementById("Diamond_Small").value * 60);
+	fish_total += (document.getElementById("Diamond_Medium").value * 120);
+	fish_total += (document.getElementById("Diamond_Large").value * 300);
+	fish_total += (document.getElementById("Diamond_Huge").value * 900);
+
+	
 	
 	// Find and set the boxes for total gems, total wls, and total byte
 	var total_gems = document.getElementById("total_gems");
@@ -172,36 +128,7 @@ function calculate() { //main calculation function
 	
 	total_gems.value = Math.round(fish_total);
 	total_wl.value = Math.round(fish_total / worldlock_rate);
-	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)); // byte is temporarily same as wls because im too tired to think of the math right now.
+	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)); // byte is set to 300, but a option might be added in the future
 	
 	
-	// Progress Bar code starts here:
-	var bar = document.getElementById("total_bar").children;
-	
-	var i;
-	for (i=1;i < table.rows.length;i++) {
-		var tablecells =  table.rows[i].cells;
-		var fish_amount = parseInt(tablecells[1].innerHTML);
-		var fish_type = tablecells[2].innerHTML;
-		console.log("check " + total_amount);
-		var bar_percent = (fish_amount / total_amount)*100;
-		
-		if (fish_type == "Herring") {document.getElementById("bar_Herring").style.width = bar_percent + "%";}
-		if (fish_type == "Kingfish") {document.getElementById("bar_Kingfish").style.width = bar_percent + "%";}
-		if (fish_type == "Goldfish") {document.getElementById("bar_Goldfish").style.width = bar_percent + "%";}
-		if (fish_type == "Butterflyfish") {document.getElementById("bar_Butterflyfish").style.width = bar_percent + "%";}
-		if (fish_type == "Carp") {document.getElementById("bar_Carp").style.width = bar_percent + "%";}
-		if (fish_type == "Halibut") {document.getElementById("bar_Halibut").style.width = bar_percent + "%";}
-		if (fish_type == "Sea Angler") {document.getElementById("bar_Sea").style.width = bar_percent + "%";}
-		if (fish_type == "Tuna") {document.getElementById("bar_Tuna").style.width = bar_percent + "%";}
-		if (fish_type == "Acid Puffer") {document.getElementById("bar_Acid").style.width = bar_percent + "%";}
-		if (fish_type == "Dumbfish") {document.getElementById("bar_Dumbfish").style.width = bar_percent + "%";}
-		if (fish_type == "Piranha") {document.getElementById("bar_Piranha").style.width = bar_percent + "%";}
-		if (fish_type == "Topaz") {document.getElementById("bar_Topaz").style.width = bar_percent + "%";}
-		if (fish_type == "Emerald") {document.getElementById("bar_Emerald").style.width = bar_percent + "%";}
-		if (fish_type == "Sapphire") {document.getElementById("bar_Sapphire").style.width = bar_percent + "%";}
-		if (fish_type == "Ruby") {document.getElementById("bar_Ruby").style.width = bar_percent + "%";}
-		if (fish_type == "Diamond") {document.getElementById("bar_Diamond").style.width = bar_percent + "%";}
-		
-	}
 }
