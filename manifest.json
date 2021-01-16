@@ -6,7 +6,7 @@
   "scope": "/",
   "display": "standalone",
   "start_url": "https://pwgems.com/",
-  "background_color": "#39a4dc",
+  "background_color": "#343a40",
   "theme_color": "transparent",
   "description": "With Pixelworlds Gems you can calculate gems from fish or gemstones using many advanced features! In addition you can also use some other Pixelworlds related tools to help you out in Pixelworlds!",
   "orientation": "any",
