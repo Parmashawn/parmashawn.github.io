@@ -1,0 +1,20 @@
+{
+  "name": "Pixelworlds Gems",
+  "short_name": "Pw Gems",
+  "lang": "en-US",
+  "start_url": "https://pwgems.com",
+  "display": "standalone",
+  "theme_color": "#03a9fc",
+  "icons": [
+    {
+      "src": "img/icons/android-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/icons/apple-icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
