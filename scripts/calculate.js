@@ -26,14 +26,14 @@ function calculate() { //main calculation function
 	fish_total += (document.getElementById("Butterflyfish_Small").value * 60) * clan_modifier;
 	fish_total += (document.getElementById("Butterflyfish_Medium").value * 105) * clan_modifier;
 	fish_total += (document.getElementById("Butterflyfish_Large").value * 150) * clan_modifier;
-	fish_total += (document.getElementById("Butterflyfish_Huge").value * 600) * clan_modifier;
+	fish_total += (document.getElementById("Butterflyfish_Huge").value * 450) * clan_modifier;
 
 	// Goldfish
 	fish_total += (document.getElementById("Goldfish_Tiny").value * 15) * clan_modifier;
 	fish_total += (document.getElementById("Goldfish_Small").value * 60) * clan_modifier;
 	fish_total += (document.getElementById("Goldfish_Medium").value * 105) * clan_modifier;
 	fish_total += (document.getElementById("Goldfish_Large").value * 150) * clan_modifier;
-	fish_total += (document.getElementById("Goldfish_Huge").value * 600) * clan_modifier;
+	fish_total += (document.getElementById("Goldfish_Huge").value * 450) * clan_modifier;
 
 	// Carp
 	fish_total += (document.getElementById("Carp_Tiny").value * 20) * clan_modifier;
