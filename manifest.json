@@ -1,45 +1,23 @@
 {
-    "dir": "ltr",
-    "lang": "English",
-    "name": "Pixelworlds Gems",
-    "short_name": "Pw Gems",
-    "scope": "/",
-    "display": "standalone",
-    "start_url": "https://pwgems.com/",
-    "background_color": "#ffffff",
-    "theme_color": "transparent",
-    "description": "With Pixelworlds Gems you can calculate gems from fish or gemstones using many advanced features! In addition you can also use some other Pixelworlds related tools to help you out in Pixelworlds!",
-    "orientation": "any",
-    "related_applications": [],
-    "prefer_related_applications": false,
-    "icons": [
-        {
-            "src": "https://pwgems.com/favicon.png",
-            "type": "image/png",
-            "sizes": "512x512"
-        }
-    ],
-    "url": "https://pwgems.com",
-    "screenshots": [
-        {
-            "src": "https://pwgems.com/img/screenshots/ss_1.jpg",
-            "sizes": "1280x800",
-            "type": "image/png"
-        },
-        {
-            "src": "https://pwgems.com/img/screenshots/ss_3.jpg",
-            "sizes": "750x1334",
-            "type": "image/png"
-        },
-        {
-            "src": "https://pwgems.com/img/screenshots/ss_2.jpg",
-            "sizes": "1280x800",
-            "type": "image/png"
-        },
-        {
-            "src": "https://pwgems.com/img/screenshots/ss_4.jpg",
-            "sizes": "750x1334",
-            "type": "image/png"
-        }
-    ]
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Pixelworlds Gems",
+  "short_name": "Pw Gems",
+  "scope": "/",
+  "display": "browser",
+  "start_url": "https://pwgems.com/",
+  "background_color": "#000000",
+  "theme_color": "transparent",
+  "description": "With Pixelworlds Gems you can calculate gems from fish or gemstones using many advanced features! In addition you can also use some other Pixelworlds related tools to help you out in Pixelworlds!",
+  "orientation": "any",
+  "related_applications": [],
+  "prefer_related_applications": "false",
+  "icons": [
+    {
+      "src": "https://pwgems.com/favicon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "url": "https://pwgems.com"
 }
