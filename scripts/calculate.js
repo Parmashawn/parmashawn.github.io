@@ -143,7 +143,10 @@ function generatelink() {
 			link += str;
 		}}
 	if (document.getElementById("option_rate").value != 2500) {var str = "option_rate" + "=" + document.getElementId("option_rate").value + "&"; link += str;}
-	document.getElementById("share").value = link.slice(0, -1);
+	if (link.slice(0, -1) == window.location.href.split('#')[0]) {document.getElementById("share").value = "...";}
+	else {document.getElementById("share").value = link.slice(0, -1);}
+	
+
 
 }
 
