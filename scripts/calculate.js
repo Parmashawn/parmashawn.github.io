@@ -130,5 +130,35 @@ function calculate() { //main calculation function
 	total_wl.value = Math.round(fish_total / worldlock_rate);
 	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)); // byte is set to 300, but a option might be added in the future
 	
-	
+	generatelink();
+}
+
+function generatelink() {
+	var link = window.location.href.split('#')[0] + "#";
+	var inputs = document.getElementsByClassName("calc-input");
+	var i
+	for (i=0; i < inputs.length; i++) { // adds all fish and gemstones to link if value above zero
+		if (inputs[i].value > 0) {
+			var str = inputs[i].id + "=" + inputs[i].value + "&";
+			link += str;
+		}}
+	if (document.getElementById("option_rate").value != 2500) {var str = "option_rate" + "=" + document.getElementId("option_rate").value + "&"; link += str;}
+	document.getElementById("share").value = link.slice(0, -1);
+
+}
+
+function load() {
+	var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+		for(var i = 0; i < hashParams.length; i++){
+			var p = hashParams[i].split('=');
+			document.getElementById(p[0]).value = decodeURIComponent(p[1]);;
+		}
+		calculate();
+}
+
+function copylink() {
+	var copyText = document.getElementById("share");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999); /* For mobile devices */
+	 document.execCommand("copy");
 }
