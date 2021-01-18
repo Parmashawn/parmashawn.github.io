@@ -139,9 +139,12 @@ function generatelink() {
 	var i
 	for (i=0; i < inputs.length; i++) { // adds all fish and gemstones to link if value above zero
 		if (inputs[i].value > 0) {
+			inputs[i].style.background = "#c2ffd2";
 			var str = inputs[i].id + "=" + inputs[i].value + "&";
 			link += str;
-		}}
+		} else {inputs[i].style.background = "white";}
+		
+		}
 	if (document.getElementById("option_rate").value != 2500) {var str = "option_rate" + "=" + document.getElementId("option_rate").value + "&"; link += str;}
 	if (link.slice(0, -1) == window.location.href.split('#')[0]) {document.getElementById("share").value = "...";}
 	else {document.getElementById("share").value = link.slice(0, -1);}
@@ -163,3 +166,4 @@ function copylink() {
 	copyText.setSelectionRange(0, 99999); /* For mobile devices */
 	 document.execCommand("copy");
 }
+
