@@ -126,9 +126,9 @@ function calculate() { //main calculation function
 	var total_wl = document.getElementById("total_wl");
 	var total_bc = document.getElementById("total_bc");
 	
-	total_gems.value = Math.round(fish_total);
-	total_wl.value = Math.round(fish_total / worldlock_rate);
-	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)); // byte is set to 300, but a option might be added in the future
+	total_gems.value = Math.round(fish_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	total_wl.value = Math.round(fish_total / worldlock_rate).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // byte is set to 300, but a option might be added in the future
 	
 	generatelink();
 }
