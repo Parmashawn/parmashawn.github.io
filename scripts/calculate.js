@@ -8,116 +8,116 @@ function calculate() { //main calculation function
 	document.getElementById("label_option_rate").innerHTML = "Gems per World Lock: " + worldlock_rate;
 
 	// Herring
-	fish_total += (document.getElementById("Herring_Tiny").value * 10) * clan_modifier;
-	fish_total += (document.getElementById("Herring_Small").value * 40) * clan_modifier;
-	fish_total += (document.getElementById("Herring_Medium").value * 70) * clan_modifier;
-	fish_total += (document.getElementById("Herring_Large").value * 100) * clan_modifier;
-	fish_total += (document.getElementById("Herring_Huge").value * 300) * clan_modifier;
+	fish_total += (document.getElementById("het").value * 10) * clan_modifier;
+	fish_total += (document.getElementById("hes").value * 40) * clan_modifier;
+	fish_total += (document.getElementById("hem").value * 70) * clan_modifier;
+	fish_total += (document.getElementById("hel").value * 100) * clan_modifier;
+	fish_total += (document.getElementById("heh").value * 300) * clan_modifier;
 
 	// Kingfish
-	fish_total += (document.getElementById("Kingfish_Tiny").value * 10) * clan_modifier;
-	fish_total += (document.getElementById("Kingfish_Small").value * 40) * clan_modifier;
-	fish_total += (document.getElementById("Kingfish_Medium").value * 70) * clan_modifier;
-	fish_total += (document.getElementById("Kingfish_Large").value * 100) * clan_modifier;
-	fish_total += (document.getElementById("Kingfish_Huge").value * 300) * clan_modifier;
+	fish_total += (document.getElementById("kit").value * 10) * clan_modifier;
+	fish_total += (document.getElementById("kis").value * 40) * clan_modifier;
+	fish_total += (document.getElementById("kim").value * 70) * clan_modifier;
+	fish_total += (document.getElementById("kil").value * 100) * clan_modifier;
+	fish_total += (document.getElementById("kih").value * 300) * clan_modifier;
 
 	// Butterflyfish
-	fish_total += (document.getElementById("Butterflyfish_Tiny").value * 15) * clan_modifier;
-	fish_total += (document.getElementById("Butterflyfish_Small").value * 60) * clan_modifier;
-	fish_total += (document.getElementById("Butterflyfish_Medium").value * 105) * clan_modifier;
-	fish_total += (document.getElementById("Butterflyfish_Large").value * 150) * clan_modifier;
-	fish_total += (document.getElementById("Butterflyfish_Huge").value * 450) * clan_modifier;
+	fish_total += (document.getElementById("but").value * 15) * clan_modifier;
+	fish_total += (document.getElementById("bus").value * 60) * clan_modifier;
+	fish_total += (document.getElementById("bum").value * 105) * clan_modifier;
+	fish_total += (document.getElementById("bul").value * 150) * clan_modifier;
+	fish_total += (document.getElementById("buh").value * 450) * clan_modifier;
 
 	// Goldfish
-	fish_total += (document.getElementById("Goldfish_Tiny").value * 15) * clan_modifier;
-	fish_total += (document.getElementById("Goldfish_Small").value * 60) * clan_modifier;
-	fish_total += (document.getElementById("Goldfish_Medium").value * 105) * clan_modifier;
-	fish_total += (document.getElementById("Goldfish_Large").value * 150) * clan_modifier;
-	fish_total += (document.getElementById("Goldfish_Huge").value * 450) * clan_modifier;
+	fish_total += (document.getElementById("got").value * 15) * clan_modifier;
+	fish_total += (document.getElementById("gos").value * 60) * clan_modifier;
+	fish_total += (document.getElementById("gom").value * 105) * clan_modifier;
+	fish_total += (document.getElementById("gol").value * 150) * clan_modifier;
+	fish_total += (document.getElementById("goh").value * 450) * clan_modifier;
 
 	// Carp
-	fish_total += (document.getElementById("Carp_Tiny").value * 20) * clan_modifier;
-	fish_total += (document.getElementById("Carp_Small").value * 80) * clan_modifier;
-	fish_total += (document.getElementById("Carp_Medium").value * 140) * clan_modifier;
-	fish_total += (document.getElementById("Carp_Large").value * 200) * clan_modifier;
-	fish_total += (document.getElementById("Carp_Huge").value * 600) * clan_modifier;
+	fish_total += (document.getElementById("cat").value * 20) * clan_modifier;
+	fish_total += (document.getElementById("cas").value * 80) * clan_modifier;
+	fish_total += (document.getElementById("cam").value * 140) * clan_modifier;
+	fish_total += (document.getElementById("cal").value * 200) * clan_modifier;
+	fish_total += (document.getElementById("cah").value * 600) * clan_modifier;
 
 	// Halibut
-	fish_total += (document.getElementById("Halibut_Tiny").value * 20) * clan_modifier;
-	fish_total += (document.getElementById("Halibut_Small").value * 80) * clan_modifier;
-	fish_total += (document.getElementById("Halibut_Medium").value * 140) * clan_modifier;
-	fish_total += (document.getElementById("Halibut_Large").value * 200) * clan_modifier;
-	fish_total += (document.getElementById("Halibut_Huge").value * 600) * clan_modifier;
+	fish_total += (document.getElementById("hat").value * 20) * clan_modifier;
+	fish_total += (document.getElementById("has").value * 80) * clan_modifier;
+	fish_total += (document.getElementById("ham").value * 140) * clan_modifier;
+	fish_total += (document.getElementById("hal").value * 200) * clan_modifier;
+	fish_total += (document.getElementById("hah").value * 600) * clan_modifier;
 
 	// Sea Angler
-	fish_total += (document.getElementById("Sea_Tiny").value * 30) * clan_modifier;
-	fish_total += (document.getElementById("Sea_Small").value * 120) * clan_modifier;
-	fish_total += (document.getElementById("Sea_Medium").value * 210) * clan_modifier;
-	fish_total += (document.getElementById("Sea_Large").value * 300) * clan_modifier;
-	fish_total += (document.getElementById("Sea_Huge").value * 900) * clan_modifier;
+	fish_total += (document.getElementById("set").value * 30) * clan_modifier;
+	fish_total += (document.getElementById("ses").value * 120) * clan_modifier;
+	fish_total += (document.getElementById("sem").value * 210) * clan_modifier;
+	fish_total += (document.getElementById("sel").value * 300) * clan_modifier;
+	fish_total += (document.getElementById("seh").value * 900) * clan_modifier;
 	
 	// Tuna
-	fish_total += (document.getElementById("Tuna_Tiny").value * 40) * clan_modifier;
-	fish_total += (document.getElementById("Tuna_Small").value * 160) * clan_modifier;
-	fish_total += (document.getElementById("Tuna_Medium").value * 280) * clan_modifier;
-	fish_total += (document.getElementById("Tuna_Large").value * 400) * clan_modifier;
-	fish_total += (document.getElementById("Tuna_Huge").value * 1200) * clan_modifier;
+	fish_total += (document.getElementById("tut").value * 40) * clan_modifier;
+	fish_total += (document.getElementById("tus").value * 160) * clan_modifier;
+	fish_total += (document.getElementById("tum").value * 280) * clan_modifier;
+	fish_total += (document.getElementById("tul").value * 400) * clan_modifier;
+	fish_total += (document.getElementById("tuh").value * 1200) * clan_modifier;
 
 	// Acid
-	fish_total += (document.getElementById("Acid_Tiny").value * 80) * clan_modifier;
-	fish_total += (document.getElementById("Acid_Small").value * 320) * clan_modifier;
-	fish_total += (document.getElementById("Acid_Medium").value * 560) * clan_modifier;
-	fish_total += (document.getElementById("Acid_Large").value * 800) * clan_modifier;
-	fish_total += (document.getElementById("Acid_Huge").value * 2400) * clan_modifier;
+	fish_total += (document.getElementById("act").value * 80) * clan_modifier;
+	fish_total += (document.getElementById("acs").value * 320) * clan_modifier;
+	fish_total += (document.getElementById("acm").value * 560) * clan_modifier;
+	fish_total += (document.getElementById("acl").value * 800) * clan_modifier;
+	fish_total += (document.getElementById("ach").value * 2400) * clan_modifier;
 
 	// Dumbfish
-	fish_total += (document.getElementById("Dumbfish_Tiny").value * 5) * clan_modifier;
-	fish_total += (document.getElementById("Dumbfish_Small").value * 10) * clan_modifier;
-	fish_total += (document.getElementById("Dumbfish_Medium").value * 30) * clan_modifier;
-	fish_total += (document.getElementById("Dumbfish_Large").value * 50) * clan_modifier;
-	fish_total += (document.getElementById("Dumbfish_Huge").value * 100) * clan_modifier;
+	fish_total += (document.getElementById("dut").value * 5) * clan_modifier;
+	fish_total += (document.getElementById("dus").value * 10) * clan_modifier;
+	fish_total += (document.getElementById("dum").value * 30) * clan_modifier;
+	fish_total += (document.getElementById("dul").value * 50) * clan_modifier;
+	fish_total += (document.getElementById("duh").value * 100) * clan_modifier;
 
 	// Piranha
-	fish_total += (document.getElementById("Piranha_Tiny").value * 30) * clan_modifier;
-	fish_total += (document.getElementById("Piranha_Small").value * 120) * clan_modifier;
-	fish_total += (document.getElementById("Piranha_Medium").value * 210) * clan_modifier;
-	fish_total += (document.getElementById("Piranha_Large").value * 300) * clan_modifier;
-	fish_total += (document.getElementById("Piranha_Huge").value * 900) * clan_modifier;
+	fish_total += (document.getElementById("pit").value * 30) * clan_modifier;
+	fish_total += (document.getElementById("pis").value * 120) * clan_modifier;
+	fish_total += (document.getElementById("pim").value * 210) * clan_modifier;
+	fish_total += (document.getElementById("pil").value * 300) * clan_modifier;
+	fish_total += (document.getElementById("pih").value * 900) * clan_modifier;
 
 	// Topaz
-	fish_total += (document.getElementById("Topaz_Tiny").value * 3);
-	fish_total += (document.getElementById("Topaz_Small").value * 6);
-	fish_total += (document.getElementById("Topaz_Medium").value * 12);
-	fish_total += (document.getElementById("Topaz_Large").value * 30);
-	fish_total += (document.getElementById("Topaz_Huge").value * 90);
+	fish_total += (document.getElementById("tot").value * 3);
+	fish_total += (document.getElementById("tos").value * 6);
+	fish_total += (document.getElementById("tom").value * 12);
+	fish_total += (document.getElementById("tol").value * 30);
+	fish_total += (document.getElementById("toh").value * 90);
 
 	// Emerald
-	fish_total += (document.getElementById("Emerald_Tiny").value * 5);
-	fish_total += (document.getElementById("Emerald_Small").value * 10);
-	fish_total += (document.getElementById("Emerald_Medium").value * 20);
-	fish_total += (document.getElementById("Emerald_Large").value * 50);
-	fish_total += (document.getElementById("Emerald_Huge").value * 150);
+	fish_total += (document.getElementById("emt").value * 5);
+	fish_total += (document.getElementById("ems").value * 10);
+	fish_total += (document.getElementById("emm").value * 20);
+	fish_total += (document.getElementById("eml").value * 50);
+	fish_total += (document.getElementById("emh").value * 150);
 
-	// Sapphire
-	fish_total += (document.getElementById("Sapphire_Tiny").value * 10);
-	fish_total += (document.getElementById("Sapphire_Small").value * 20);
-	fish_total += (document.getElementById("Sapphire_Medium").value * 40);
-	fish_total += (document.getElementById("Sapphire_Large").value * 100);
-	fish_total += (document.getElementById("Sapphire_Huge").value * 300);
+	// sa
+	fish_total += (document.getElementById("sa_t").value * 10);
+	fish_total += (document.getElementById("sa_s").value * 20);
+	fish_total += (document.getElementById("sa_m").value * 40);
+	fish_total += (document.getElementById("sa_l").value * 100);
+	fish_total += (document.getElementById("sa_h").value * 300);
 
-	// Ruby
-	fish_total += (document.getElementById("Ruby_Tiny").value * 20);
-	fish_total += (document.getElementById("Ruby_Small").value * 40);
-	fish_total += (document.getElementById("Ruby_Medium").value * 80);
-	fish_total += (document.getElementById("Ruby_Large").value * 200);
-	fish_total += (document.getElementById("Ruby_Huge").value * 600);
+	// ru
+	fish_total += (document.getElementById("ru_t").value * 20);
+	fish_total += (document.getElementById("ru_s").value * 40);
+	fish_total += (document.getElementById("ru_m").value * 80);
+	fish_total += (document.getElementById("ru_l").value * 200);
+	fish_total += (document.getElementById("ru_h").value * 600);
 
-	// Diamond
-	fish_total += (document.getElementById("Diamond_Tiny").value * 30);
-	fish_total += (document.getElementById("Diamond_Small").value * 60);
-	fish_total += (document.getElementById("Diamond_Medium").value * 120);
-	fish_total += (document.getElementById("Diamond_Large").value * 300);
-	fish_total += (document.getElementById("Diamond_Huge").value * 900);
+	// di
+	fish_total += (document.getElementById("di_t").value * 30);
+	fish_total += (document.getElementById("di_s").value * 60);
+	fish_total += (document.getElementById("di_m").value * 120);
+	fish_total += (document.getElementById("di_l").value * 300);
+	fish_total += (document.getElementById("di_h").value * 900);
 
 	
 	
