@@ -98,26 +98,26 @@ function calculate() { //main calculation function
 	fish_total += (document.getElementById("eml").value * 50);
 	fish_total += (document.getElementById("emh").value * 150);
 
-	// sa
-	fish_total += (document.getElementById("sa_t").value * 10);
-	fish_total += (document.getElementById("sa_s").value * 20);
-	fish_total += (document.getElementById("sa_m").value * 40);
-	fish_total += (document.getElementById("sa_l").value * 100);
-	fish_total += (document.getElementById("sa_h").value * 300);
+	// Sapphire
+	fish_total += (document.getElementById("sat").value * 10);
+	fish_total += (document.getElementById("sas").value * 20);
+	fish_total += (document.getElementById("sam").value * 40);
+	fish_total += (document.getElementById("sal").value * 100);
+	fish_total += (document.getElementById("sah").value * 300);
 
-	// ru
-	fish_total += (document.getElementById("ru_t").value * 20);
-	fish_total += (document.getElementById("ru_s").value * 40);
-	fish_total += (document.getElementById("ru_m").value * 80);
-	fish_total += (document.getElementById("ru_l").value * 200);
-	fish_total += (document.getElementById("ru_h").value * 600);
+	// Ruby
+	fish_total += (document.getElementById("rut").value * 20);
+	fish_total += (document.getElementById("rus").value * 40);
+	fish_total += (document.getElementById("rum").value * 80);
+	fish_total += (document.getElementById("rul").value * 200);
+	fish_total += (document.getElementById("ruh").value * 600);
 
-	// di
-	fish_total += (document.getElementById("di_t").value * 30);
-	fish_total += (document.getElementById("di_s").value * 60);
-	fish_total += (document.getElementById("di_m").value * 120);
-	fish_total += (document.getElementById("di_l").value * 300);
-	fish_total += (document.getElementById("di_h").value * 900);
+	// Diamond
+	fish_total += (document.getElementById("dit").value * 30);
+	fish_total += (document.getElementById("dis").value * 60);
+	fish_total += (document.getElementById("dim").value * 120);
+	fish_total += (document.getElementById("dil").value * 300);
+	fish_total += (document.getElementById("dih").value * 900);
 
 	
 	
