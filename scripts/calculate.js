@@ -118,6 +118,11 @@ function calculate() { //main calculation function
 	fish_total += (document.getElementById("dim").value * 120);
 	fish_total += (document.getElementById("dil").value * 300);
 	fish_total += (document.getElementById("dih").value * 900);
+	
+	// Gem Pouches
+	fish_total += (document.getElementById("sgp").value * 200);
+	fish_total += (document.getElementById("mgp").value * 1000);
+	fish_total += (document.getElementById("lgp").value * 10000);
 
 	
 	
