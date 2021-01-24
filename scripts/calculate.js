@@ -136,12 +136,13 @@ function calculate() { //main calculation function
 	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // byte is set to 300, but a option might be added in the future
 	
 	generatelink();
+	progressbar();
 }
 
 function generatelink() {
 	var link = window.location.href.split('#')[0] + "#";
 	var inputs = document.getElementsByClassName("calc-input");
-	var i
+	var i;
 	for (i=0; i < inputs.length; i++) { // adds all fish and gemstones to link if value above zero
 		if (inputs[i].value > 0) {
 			inputs[i].style.background = "#c2ffd2";
@@ -172,3 +173,161 @@ function copylink() {
 	 document.execCommand("copy");
 }
 
+function progressbar() {
+	var inputtotal = 0;
+	var inputs = document.getElementsByClassName("calc-input");
+	var i;
+
+	var fish_total = 0;
+	var clan_modifier = document.getElementById("option_clan").value; 
+
+	var hetotal = 0;
+	var kitotal = 0;
+	var butotal = 0;
+	var gototal = 0;
+	var catotal = 0;
+	var hatotal = 0;
+	var setotal = 0;
+	var tutotal = 0;
+	var actotal = 0;
+	var dutotal = 0;
+	var pitotal = 0;
+	var tototal = 0;
+	var emtotal = 0;
+	var satotal = 0;
+	var rutotal = 0;
+	var ditotal = 0;
+
+
+	// Herring
+	hetotal += (document.getElementById("het").value * 10);
+	hetotal += (document.getElementById("hes").value * 40);
+	hetotal += (document.getElementById("hem").value * 70);
+	hetotal += (document.getElementById("hel").value * 100);
+	hetotal += (document.getElementById("heh").value * 300);
+
+	// Kingfish
+	kitotal += (document.getElementById("kit").value * 10);
+	kitotal += (document.getElementById("kis").value * 40);
+	kitotal += (document.getElementById("kim").value * 70);
+	kitotal += (document.getElementById("kil").value * 100);
+	kitotal += (document.getElementById("kih").value * 300);
+
+	// Butterflyfish
+	butotal += (document.getElementById("but").value * 15);
+	butotal += (document.getElementById("bus").value * 60);
+	butotal += (document.getElementById("bum").value * 105);
+	butotal += (document.getElementById("bul").value * 150);
+	butotal += (document.getElementById("buh").value * 450);
+
+	// Goldfish
+	gototal += (document.getElementById("got").value * 15);
+	gototal += (document.getElementById("gos").value * 60);
+	gototal += (document.getElementById("gom").value * 105);
+	gototal += (document.getElementById("gol").value * 150);
+	gototal += (document.getElementById("goh").value * 450);
+
+	// Carp
+	catotal += (document.getElementById("cat").value * 20);
+	catotal += (document.getElementById("cas").value * 80);
+	catotal += (document.getElementById("cam").value * 140);
+	catotal += (document.getElementById("cal").value * 200);
+	catotal += (document.getElementById("cah").value * 600);
+
+	// Halibut
+	hatotal += (document.getElementById("hat").value * 20);
+	hatotal += (document.getElementById("has").value * 80);
+	hatotal += (document.getElementById("ham").value * 140);
+	hatotal += (document.getElementById("hal").value * 200);
+	hatotal += (document.getElementById("hah").value * 600);
+
+	// Sea Angler
+	setotal += (document.getElementById("set").value * 30);
+	setotal += (document.getElementById("ses").value * 120);
+	setotal += (document.getElementById("sem").value * 210);
+	setotal += (document.getElementById("sel").value * 300);
+	setotal += (document.getElementById("seh").value * 900);
+	
+	// Tuna
+	tutotal += (document.getElementById("tut").value * 40);
+	tutotal += (document.getElementById("tus").value * 160);
+	tutotal += (document.getElementById("tum").value * 280);
+	tutotal += (document.getElementById("tul").value * 400);
+	tutotal += (document.getElementById("tuh").value * 1200);
+
+	// Acid
+	actotal += (document.getElementById("act").value * 80);
+	actotal += (document.getElementById("acs").value * 320);
+	actotal += (document.getElementById("acm").value * 560);
+	actotal += (document.getElementById("acl").value * 800);
+	actotal += (document.getElementById("ach").value * 2400);
+
+	// Dumbfish
+	dutotal += (document.getElementById("dut").value * 5);
+	dutotal += (document.getElementById("dus").value * 10);
+	dutotal += (document.getElementById("dum").value * 30);
+	dutotal += (document.getElementById("dul").value * 50);
+	dutotal += (document.getElementById("duh").value * 100);
+
+	// Piranha
+	pitotal += (document.getElementById("pit").value * 30);
+	pitotal += (document.getElementById("pis").value * 120);
+	pitotal += (document.getElementById("pim").value * 210);
+	pitotal += (document.getElementById("pil").value * 300);
+	pitotal += (document.getElementById("pih").value * 900);
+
+	// Topaz
+	tototal += (document.getElementById("tot").value * 3);
+	tototal += (document.getElementById("tos").value * 6);
+	tototal += (document.getElementById("tom").value * 12);
+	tototal += (document.getElementById("tol").value * 30);
+	tototal += (document.getElementById("toh").value * 90);
+
+	// Emerald
+	emtotal += (document.getElementById("emt").value * 5);
+	emtotal += (document.getElementById("ems").value * 10);
+	emtotal += (document.getElementById("emm").value * 20);
+	emtotal += (document.getElementById("eml").value * 50);
+	emtotal += (document.getElementById("emh").value * 150);
+
+	// Sapphire
+	satotal += (document.getElementById("sat").value * 10);
+	satotal += (document.getElementById("sas").value * 20);
+	satotal += (document.getElementById("sam").value * 40);
+	satotal += (document.getElementById("sal").value * 100);
+	satotal += (document.getElementById("sah").value * 300);
+
+	// Ruby
+	rutotal += (document.getElementById("rut").value * 20);
+	rutotal += (document.getElementById("rus").value * 40);
+	rutotal += (document.getElementById("rum").value * 80);
+	rutotal += (document.getElementById("rul").value * 200);
+	rutotal += (document.getElementById("ruh").value * 600);
+
+	// Diamond
+	ditotal += (document.getElementById("dit").value * 30);
+	ditotal += (document.getElementById("dis").value * 60);
+	ditotal += (document.getElementById("dim").value * 120);
+	ditotal += (document.getElementById("dil").value * 300);
+	ditotal += (document.getElementById("dih").value * 900);
+	
+	var fishbar_total = hetotal + kitotal + butotal + gototal + catotal + hatotal + setotal + tutotal + actotal + dutotal + pitotal + tototal + emtotal + satotal + rutotal + ditotal;
+	
+	document.getElementById("hep").style.width = ((hetotal / fishbar_total) * 100).toString() + '%' ;
+	document.getElementById("kip").style.width = ((kitotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("bup").style.width = ((butotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("gop").style.width = ((gototal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("cap").style.width = ((catotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("hap").style.width = ((hatotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("sep").style.width = ((setotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("tup").style.width = ((tutotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("acp").style.width = ((actotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("dup").style.width = ((dutotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("pip").style.width = ((pitotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("top").style.width = ((tototal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("emp").style.width = ((emtotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("sap").style.width = ((satotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("rup").style.width = ((rutotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("dip").style.width = ((ditotal / fishbar_total) * 100).toString() + '%';
+
+}
