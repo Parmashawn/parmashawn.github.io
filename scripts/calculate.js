@@ -313,21 +313,52 @@ function progressbar() {
 	
 	var fishbar_total = hetotal + kitotal + butotal + gototal + catotal + hatotal + setotal + tutotal + actotal + dutotal + pitotal + tototal + emtotal + satotal + rutotal + ditotal;
 	
-	document.getElementById("hep").style.width = ((hetotal / fishbar_total) * 100).toString() + '%' ;
+	document.getElementById("hep").style.width = ((hetotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("hep").innerHTML = "Herring " + Math.round((hetotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("kip").style.width = ((kitotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("kip").innerHTML = "Kingfish " + Math.round((kitotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("bup").style.width = ((butotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("bup").innerHTML = "Butterflyfish " + Math.round((butotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("gop").style.width = ((gototal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("gop").innerHTML = "Goldfish " + Math.round((gototal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("cap").style.width = ((catotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("cap").innerHTML = "Carp " + Math.round((catotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("hap").style.width = ((hatotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("hap").innerHTML = "Halibut " + Math.round((hatotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("sep").style.width = ((setotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("sep").innerHTML = "Sea Angler " + Math.round((setotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("tup").style.width = ((tutotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("tup").innerHTML = "Tuna " + Math.round((tutotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("acp").style.width = ((actotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("acp").innerHTML = "Acid Puffer " + Math.round((actotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("dup").style.width = ((dutotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("dup").innerHTML = "Dumbfish " + Math.round((dutotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("pip").style.width = ((pitotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("pip").innerHTML = "Piranha " + Math.round((pitotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("top").style.width = ((tototal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("top").innerHTML = "Topaz " + Math.round((tototal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("emp").style.width = ((emtotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("emp").innerHTML = "Emerald " + Math.round((emtotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("sap").style.width = ((satotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("sap").innerHTML = "Sapphire " + Math.round((satotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("rup").style.width = ((rutotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("rup").innerHTML = "Ruby " + Math.round((rutotal / fishbar_total) * 100).toString() + '%';
+	
 	document.getElementById("dip").style.width = ((ditotal / fishbar_total) * 100).toString() + '%';
+	document.getElementById("dip").innerHTML = "Diamond " + Math.round((ditotal / fishbar_total) * 100).toString() + '%';
 
 }
