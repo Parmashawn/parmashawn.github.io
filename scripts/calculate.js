@@ -1,10 +1,9 @@
 
 function calculate() { //main calculation function
 
-	var fish_total = 0;
-	var clan_modifier = document.getElementById("option_clan").value; 
-	var worldlock_rate = document.getElementById("option_rate").value; //this will be an option for the rate of worldlocks
-	var total_amount = 0;
+	const clan_modifier = document.getElementById("option_clan").value; 
+	const worldlock_rate = document.getElementById("option_rate").value; //this will be an option for the rate of worldlocks
+	let fish_total = 0, total_amount = 0;
 	document.getElementById("label_option_rate").innerHTML = "Gems per World Lock: " + worldlock_rate;
 
 	// Herring
@@ -63,7 +62,7 @@ function calculate() { //main calculation function
 	fish_total += (document.getElementById("tul").value * 400) * clan_modifier;
 	fish_total += (document.getElementById("tuh").value * 1200) * clan_modifier;
 
-	// Acid
+	// Acid Puffer
 	fish_total += (document.getElementById("act").value * 80) * clan_modifier;
 	fish_total += (document.getElementById("acs").value * 320) * clan_modifier;
 	fish_total += (document.getElementById("acm").value * 560) * clan_modifier;
@@ -131,72 +130,59 @@ function calculate() { //main calculation function
 	var total_wl = document.getElementById("total_wl");
 	var total_bc = document.getElementById("total_bc");
 	
-	total_gems.value = Math.round(fish_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	total_wl.value = Math.round(fish_total / worldlock_rate).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-	total_bc.value = Math.round(fish_total / (worldlock_rate / 300)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // byte is set to 300, but a option might be added in the future
+	total_gems.value = Math.floor(fish_total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	total_wl.value = Math.floor(fish_total / worldlock_rate).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	total_bc.value = Math.floor(fish_total / (worldlock_rate / 300)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // byte is set to 300, but a option might be added in the future
 	
 	generatelink();
 	progressbar();
 }
 
 function generatelink() {
-	var link = window.location.href.split('#')[0] + "#";
-	var inputs = document.getElementsByClassName("calc-input");
-	var i;
+	let link = window.location.href.split('#')[0] + "#";
+	let inputs = document.getElementsByClassName("calc-input");
+	let i;
 	for (i=0; i < inputs.length; i++) { // adds all fish and gemstones to link if value above zero
 		if (inputs[i].value > 0) {
 			inputs[i].style.background = "#c2ffd2";
 			var str = inputs[i].id + "=" + inputs[i].value + "&";
 			link += str;
-		} else {inputs[i].style.background = "white";}
-		
-		}
-	if (document.getElementById("option_rate").value != 2500) {var str = "option_rate" + "=" + document.getElementId("option_rate").value + "&"; link += str;}
+		} else {
+			inputs[i].style.background = "white";
+		};
+	};
+	if (document.getElementById("option_rate").value != 2500) {let str = "option_rate" + "=" + document.getElementId("option_rate").value + "&"; link += str;}
 	if (link.slice(0, -1) == window.location.href.split('#')[0]) {document.getElementById("share").value = "...";}
 	else {document.getElementById("share").value = link.slice(0, -1);}
 	
-}
+};
 
 function load() {
-	var hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
-		for(var i = 0; i < hashParams.length; i++){
-			var p = hashParams[i].split('=');
-			document.getElementById(p[0]).value = decodeURIComponent(p[1]);
-		}
-		calculate();
-}
+	let hashParams = window.location.hash.substr(1).split('&'); // substr(1) to remove the `#`
+	for(var i = 0; i < hashParams.length; i++){
+		var p = hashParams[i].split('=');
+		document.getElementById(p[0]).value = decodeURIComponent(p[1]);
+	};
+	calculate();
+};
 
 function copylink() {
 	var copyText = document.getElementById("share");
 	copyText.select();
 	copyText.setSelectionRange(0, 99999); /* For mobile devices */
 	 document.execCommand("copy");
-}
+};
 
 function progressbar() {
-	var inputtotal = 0;
-	var inputs = document.getElementsByClassName("calc-input");
-	var i;
+	let inputtotal = 0;
+	const inputs = document.getElementsByClassName("calc-input");
+	let i;
 
-	var fish_total = 0;
-	var clan_modifier = document.getElementById("option_clan").value; 
+	let fish_total = 0;
+	const clan_modifier = document.getElementById("option_clan").value; 
 
-	var hetotal = 0;
-	var kitotal = 0;
-	var butotal = 0;
-	var gototal = 0;
-	var catotal = 0;
-	var hatotal = 0;
-	var setotal = 0;
-	var tutotal = 0;
-	var actotal = 0;
-	var dutotal = 0;
-	var pitotal = 0;
-	var tototal = 0;
-	var emtotal = 0;
-	var satotal = 0;
-	var rutotal = 0;
-	var ditotal = 0;
+	let hetotal = 0, kitotal = 0, butotal = 0, gototal = 0, catotal = 0, hatotal = 0, setotal = 0, tutotal = 0, actotal = 0, dutotal = 0, pitotal = 0,
+	tototal = 0, emtotal = 0, satotal = 0, rutotal = 0, ditotal = 0;
 
 
 	// Herring
@@ -311,7 +297,7 @@ function progressbar() {
 	ditotal += (document.getElementById("dil").value * 300);
 	ditotal += (document.getElementById("dih").value * 900);
 	
-	var fishbar_total = hetotal + kitotal + butotal + gototal + catotal + hatotal + setotal + tutotal + actotal + dutotal + pitotal + tototal + emtotal + satotal + rutotal + ditotal;
+	let fishbar_total = hetotal + kitotal + butotal + gototal + catotal + hatotal + setotal + tutotal + actotal + dutotal + pitotal + tototal + emtotal + satotal + rutotal + ditotal;
 	
 	document.getElementById("hep").style.width = ((hetotal / fishbar_total) * 100).toString() + '%';
 	document.getElementById("hep").innerHTML = "Herring " + Math.round((hetotal / fishbar_total) * 100).toString() + '%';
@@ -361,4 +347,4 @@ function progressbar() {
 	document.getElementById("dip").style.width = ((ditotal / fishbar_total) * 100).toString() + '%';
 	document.getElementById("dip").innerHTML = "Diamond " + Math.round((ditotal / fishbar_total) * 100).toString() + '%';
 
-}
+};
